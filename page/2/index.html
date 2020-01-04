@@ -5,11 +5,11 @@
   
 
   
-  <title>归档: 2020 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="John Doe">
@@ -64,114 +64,142 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/" class="archive-article-date">
-  <time datetime="2020-01-04T09:52:43.726Z" itemprop="datePublished">1月 4</time>
+    <article id="post-原码反码补码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/">查看Windows端口</a>
+      <a class="article-title" href="/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/">原码反码补码</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/" class="archive-article-date">
-  <time datetime="2020-01-04T09:52:43.686Z" itemprop="datePublished">1月 4</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
+        <p>原码</p>
+<ul>
+<li><p>就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。</p>
+</li>
+<li><p>通过一个字节，也就是8个二进制位表示 +7和 -7</p>
+</li>
+<li><p>0（符号位） 0000111   （+7  正数）</p>
+</li>
+<li><p>1（符号位） 0000111   （-7   负数）</p>
+</li>
+</ul>
+<p>反码</p>
+<ul>
+<li>正数的反码与其源码相同； 负数的反码是对其源码逐位取反，但符号位除外。</li>
+</ul>
+<p>补码</p>
+<ul>
+<li>正数的补码与其原码相同； 负数的补码是在其反码的末位加1</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>反码：</th>
+<th>补码：</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0 0000111 +7（原码）</td>
+<td>0  0000111  +7（原码）</td>
+</tr>
+<tr>
+<td>0 0000111 +7（反码）</td>
+<td>0  0000111  +7（补码）</td>
+</tr>
+<tr>
+<td>1 0000111 -7 （原码）</td>
+<td>1  1111000   -7（反码）</td>
+</tr>
+<tr>
+<td>1 1111000 -7 （反码）</td>
+<td>1  1111001   -7（补码）</td>
+</tr>
+</tbody></table>
+<p><strong>正数与负数补码相加为0</strong></p>
+<pre><code>    0 0000111                                
++    0 1111001                
+-----------------------                          
+   10 0000000            （1超出八位被砍掉）
+-----------------------
+    0 0000000</code></pre><p>1加1得2由于二进制没有2所以保留0向前进1从左到右计算。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/" data-id="ck4zesbuc0008t8wv3pck3cbi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MySQL8.0.15时区问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/MySQL8.0.15%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/">windows右键添加VS code</a>
+      <a class="article-title" href="/2019/07/15/MySQL8.0.15%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/">Mysql8.0.15时区问题</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  <time datetime="2020-01-04T09:52:43.650Z" itemprop="datePublished">1月 4</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/">MySQL修改root密码的4种方法</a>
-    </h1>
-  
+        <h3 id="MySQL8-0-15时区问题"><a href="#MySQL8-0-15时区问题" class="headerlink" title="MySQL8.0.15时区问题"></a>MySQL8.0.15时区问题</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">//localhost:3306/spring</span></span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  <time datetime="2020-01-04T09:52:43.545Z" itemprop="datePublished">1月 4</time>
-</a>
+<h4 id="后面加上：-serverTimezone-UTC"><a href="#后面加上：-serverTimezone-UTC" class="headerlink" title="后面加上：?serverTimezone=UTC"></a>后面加上：?serverTimezone=UTC</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">//localhost:3306/spring?serverTimezone=UTC</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/">android studio 导入其他项目工程报错解决方法 - fan7983377 的博客 - CSDN 博客</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/" class="archive-article-date">
-  <time datetime="2020-01-02T16:00:00.000Z" itemprop="datePublished">1月 3</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/MySQL8.0.15%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/" data-id="ck4zeu7vt0000g0wvfv1806jr" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/">Mysql5.7登录密码错误</a>
-    </h1>
-  
-
-    </header>
+      
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+
   
 
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </section>
         

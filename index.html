@@ -11,7 +11,7 @@
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="zh_TW">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-查看Windows端口" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/01/04/hello-world/" class="article-date">
-  <time datetime="2020-01-04T09:13:53.331Z" itemprop="datePublished">2020-01-04</time>
+    <a href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/" class="article-date">
+  <time datetime="2020-01-04T09:52:43.726Z" itemprop="datePublished">2020-01-04</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/">查看Windows端口</a>
     </h1>
   
 
@@ -86,24 +86,867 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="查看Windows端口"><a href="#查看Windows端口" class="headerlink" title="查看Windows端口"></a>查看Windows端口</h2><ul>
+<li>netstat -ano 查看所有的端口占用信息。</li>
+<li>netstat -aon|findstr “8090” 查看指定的端口号，如8090</li>
+<li>tasklist|findstr “3184”  根据pid查看占用端口程序。</li>
+<li>taskkill /f /t /im  <font color=RED>TNSLSNR.EXE</font>  使用命令taskkill /f /t /im 结束<font color=RED>TNSLSNR.EXE</font>的进程。</li>
+<li>netstat -na 显示本机连接情况及打开的端口</li>
+<li>telnet 测试端口是否开放 <ul>
+<li>例：telnet 127.0.0.1 8383</li>
+</ul>
+</li>
+</ul>
+<h2 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h2><ul>
+<li>Port是端口类型</li>
+<li>Local Address代表本机IP地址和打开的端口号</li>
+<li>Foreign Address是远程计算机IP地址和端口号</li>
+<li>State表明当前的连接状态</li>
+<li>PID显示的是对应进程的PID</li>
+<li>State显示是LISTENING时表示处于侦听状态，就是说该端口是开放的，等待连接，但还没有被连接</li>
+<li>STABLISHED的意思是建立连接。表示两台机器正在通信。</li>
+<li>CLOSE_WAIT 对方主动关闭连接或者网络 异常导致连接中断</li>
+<li>TIME_WAIT 我方主动调用close()断开连接，收到对方确认后状态变为TIME_WAIT<h3 id="因此我们应该重点关注的是ESTABLISHED状态"><a href="#因此我们应该重点关注的是ESTABLISHED状态" class="headerlink" title="因此我们应该重点关注的是ESTABLISHED状态"></a>因此我们应该重点关注的是ESTABLISHED状态</h3></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/04/hello-world/" data-id="ck4ze0oud0000f8wv5rfs6gla" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/" data-id="ck4zesbtj0007t8wv06c76c62" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-windows右键添加VS code" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/" class="article-date">
+  <time datetime="2020-01-04T09:52:43.686Z" itemprop="datePublished">2020-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/">windows右键添加VS code</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="window-右键菜单添加-vscode"><a href="#window-右键菜单添加-vscode" class="headerlink" title="window 右键菜单添加 vscode"></a>window 右键菜单添加 vscode</h3><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><ul>
+<li><p>新建一个名为 1.reg 的文件，找一个记事本或者sublime打开，名称无所谓，但是一定需要带上 .reg 后缀。</p>
+</li>
+<li><p>查看你自己的电脑的vscode安装目录，最简单的方法就是右键桌面的vscode，查看属性就知道了。以我的安装地址为例：C:\Program Files\Microsoft VS Code\Code.exe ， 单反斜杠最好都换成双反斜杠。</p>
+</li>
+<li><p>复制以下内容到 1.reg 文件中。<br>Windows Registry Editor Version 5.00</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\*\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%1\""</span><br><span class="line"></span><br><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%V\""</span><br><span class="line"></span><br><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%V\""</span><br></pre></td></tr></table></figure>
+<ul>
+<li>替换所有vscode的安装路径。<br>双击这个文件，之后都选 “是”。</li>
+</ul>
+<p>版权声明：本文为CSDN博主「stu_yiliang」的原创文章，遵循 CC 4.0 BY-SA 版权协议，<br>原文链接：<a href="https://blog.csdn.net/GreekMrzzJ/article/details/82194913" target="_blank" rel="noopener">https://blog.csdn.net/GreekMrzzJ/article/details/82194913</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/" data-id="ck4zesbsq0005t8wv6sbzalhj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MySQL修改root密码的4种方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-01-04T09:52:43.650Z" itemprop="datePublished">2020-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/">MySQL修改root密码的4种方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>使用set password命令 </p>
+<blockquote>
+<ol>
+<li>首先登录MySQL。 </li>
+<li>格式：mysql&gt; set password for 用户名@localhost = password(‘新密码’); <ul>
+<li>例子：mysql&gt; set password for root@localhost = password(‘123’);</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>使用mysqladmin </p>
+<blockquote>
+<ol>
+<li>格式：mysqladmin -u用户名 -p旧密码 password 新密码 <ul>
+<li>例子：mysqladmin -uroot -p123456 password 123</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>用UPDATE直接编辑user表 </p>
+<blockquote>
+<p>首先登录MySQL。 </p>
+<ol>
+<li>mysql&gt; use mysql; </li>
+<li>mysql&gt; update user set password=password(‘123’) where user=’root’ and host=’localhost’; </li>
+<li>mysql&gt; flush privileges;</li>
+</ol>
+</blockquote>
+</li>
+<li><p>在忘记root密码的时候，可以这样 </p>
+<h3 id="以windows为例："><a href="#以windows为例：" class="headerlink" title="以windows为例："></a>以windows为例：</h3><blockquote>
+<ol>
+<li>关闭正在运行的MySQL服务。 </li>
+<li>打开DOS窗口，转到mysql\bin目录。 </li>
+<li>输入mysqld –skip-grant-tables 回车。–skip-grant-tables 的意思是启动MySQL服务的时候跳过权限表认证。 </li>
+<li>再开一个DOS窗口（因为刚才那个DOS窗口已经不能动了），转到mysql\bin目录。 </li>
+<li>输入mysql回车，如果成功，将出现MySQL提示符 &gt;。 </li>
+<li>连接权限数据库： use mysql; 。 </li>
+<li>改密码：update user set password=password(“123”) where user=”root”;（别忘了最后加分号） 。 </li>
+<li>刷新权限（必须步骤）：flush privileges;　。 </li>
+<li>退出 quit。 </li>
+<li>注销系统，再进入，使用用户名root和刚才设置的新密码123登录。</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/" data-id="ck4zesbrc0004t8wvgucxel0p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android studio 导入其他项目工程报错解决方法 - fan7983377 的博客 - CSDN 博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time datetime="2020-01-04T09:52:43.545Z" itemprop="datePublished">2020-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/">android studio 导入其他项目工程报错解决方法 - fan7983377 的博客 - CSDN 博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android studio（简称 as），谷歌的亲儿子，基本是目前编写 Android 软件的最好的开发工具，之前用习惯了 eclipse，刚开始使用 as 怎么都不习惯，但是，能坚持使用 as 一个月，你会发现，eclipse 真不好用，as 各种爽。个人推荐还在用 eclipse 的可以选择 as 试试</p>
+<p>好了，闲话不多说，相信很多刚开始使用 as 时，会遇到各种各样的问题，比如我之前最头疼的就是导入别人的 demo，各种报错，解决都不知道怎么解决，网上搜，基本没什么用，下面说一下我摸索出来的方法</p>
+<p>转载注明：<a href="http://blog.csdn.net/fan7983377/article/details/51679199" target="_blank" rel="noopener">http://blog.csdn.net/fan7983377/article/details/51679199</a></p>
+<p>也是我偶然间发现的，在 as 上使用 svn 合作开发时，上传项目之前会屏蔽一些目录，如：</p>
+<p><img src="https://img-blog.csdn.net/20160615094411351" alt=""></p>
+<p>而别人从 svn 上下载下来的 as 项目就可以正常运行，然后我就想，会不会是这些文件的问题，于是，死马当活马医，试试。</p>
+<p><strong>第一步：先打开下载的 as 工程，把上面屏蔽目录里面的文件及文件夹都给删除掉</strong></p>
+<p>打开工程，可以看到下面的结构：<br><img src="https://img-blog.csdn.net/20160615095917870" alt=""></p>
+<p>所需要删除的文件：</p>
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+//xxx代表你下载的项目名字
+
+xxx\.gradle
+xxx\.idea
+xxx\app\build
+xxx\app\*.iml
+xxx\*.iml
+xxx\local.properties
+
+</pre>
+
+<p>如下图：</p>
+<p><img src="https://img-blog.csdn.net/20160615095845029" alt=""></p>
+<p>还有 app 文件夹下的：</p>
+<p><img src="https://img-blog.csdn.net/20160615095954558" alt=""></p>
+<p><strong>第二步：然后 as 导入这个修改后的项目</strong></p>
+<p><img src="https://img-blog.csdn.net/20160615100101123" alt=""></p>
+<p>然后有的工程可能就正常可以运行了，，导入后一切正常的就不必往下看了，而有的可能还会出错，如下图这种：</p>
+<p><img src="https://img-blog.csdn.net/20160615100303610" alt=""></p>
+<p><strong>第三步：</strong>这时候，我们需要另外再打开或新建一个 as 项目，打开新建项目里面的 build.gradle，注意是工程下的 gradle，复制 “<code>dependencies{}</code>” 大括号<strong>里面的</strong>这段代码，<strong>（注意，下图不是出错的项目）</strong></p>
+<p><img src="https://img-blog.csdn.net/20160615100729662" alt=""></p>
+<p>替换刚才出错的项目的 build.gradle 里面相同位置的那段代码<strong>（注意，下图是出错的项目）</strong></p>
+<p><img src="https://img-blog.csdn.net/20160615101211316" alt=""></p>
+<p>然后打开新建项目里面的 build.gradle，注意这个 gradle 与刚才那个 gradle 的区别，复制 “<code>buildToolsVersion &quot;xx.x.x&quot;</code>” 这段代码，<strong>（注意，下图不是出错的项目）</strong></p>
+<p><img src="https://img-blog.csdn.net/20160615101423224" alt=""></p>
+<p>替换刚才出错的项目的 build.gradle 里面相同位置的那段代码<strong>（注意，下图是出错的项目）</strong></p>
+<p><img src="https://img-blog.csdn.net/20160615100428032" alt=""></p>
+<p><strong>第四步：</strong>然后 clean 一下项目，就行了</p>
+<p><img src="https://img-blog.csdn.net/20160615100440844" alt=""></p>
+<p>好了，大概思路就是这么的思路，由于工程创建的环境不同，可能文件位置有所区别，但是需改的具体的文件还是相同的文件，灵活运用！</p>
+<p>教程结束，使用这个方法，基本上可成功运行大多数别人的工程，</p>
+<p>如果你有更好的方法，请赐教！谢谢</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/" data-id="ck4zeu7w00001g0wvhq985zdl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Mysql5.7登录密码错误" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/" class="article-date">
+  <time datetime="2020-01-02T16:00:00.000Z" itemprop="datePublished">2020-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/">Mysql5.7登录密码错误</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入</p>
+<ol>
+<li>use mysql;</li>
+<li>update mysql.user  set password=password(‘root’) where user=’root’<ul>
+<li><strong>提示ERROR 1054 (42S22): Unknown column ‘password’ in ‘field list’</strong></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>原来是mysql数据库下已经没有password这个字段了，password字段改成了authentication_string</p>
+</blockquote>
+<h3 id="使用以下方式即可"><a href="#使用以下方式即可" class="headerlink" title="使用以下方式即可"></a>使用以下方式即可</h3><ol>
+<li>use mysql;</li>
+<li>update mysql.user set authentication_string=password(‘toor’) where user=’root’;</li>
+<li>flush privileges;   刷新权限（必须步骤）</li>
+<li>quit; (退出)</li>
+<li>mysql -u root -p （登录）<blockquote>
+<p>编辑my.ini文件删掉skip-grant-tables 这一行</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>MySql5.7</strong> 设置的密码中必须至少包含一个大写字母、一个小写字母、一个特殊符号、一个数字，密码长度至少为8个字符</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/" data-id="ck4zfcik10000u4wvao6q5yc0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-aircrack-ng 破解 wifi 密码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/">aircrack-ng 使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt=""></p>
+<p><strong>输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg" alt=""></p>
+<p><strong>开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。</strong></p>
+<p><img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg" alt="">)<img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg" alt=""></p>
+<p><strong>按提示操作的结果：</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg" alt=""></p>
+<p><strong>监听网络，完了 Ctrl+C 退出。</strong></p>
+<p>airodump-ng  wlan0mon</p>
+<p><img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_r.jpg" alt=""></p>
+<p><strong>主要参数说明：</strong></p>
+<p><strong>#BSSID ：路由器、AP 的 MAC 地址</strong></p>
+<p><strong># PWR ：信号强度，一看就是越小越强了</strong></p>
+<p><strong># #Data ：传输的数据大小，大的可能在下载或看视频什么的</strong></p>
+<p><strong># CH ：无线信道，要看准</strong></p>
+<p><strong># ENC ：加密协议，自 WPA2 协议爆出重大安全漏洞，现已经出 WPA3，坐等更新</strong></p>
+<p><strong># ESSID ：这个就不用多说了，wifi 名称，有中文可能会出现乱码哈</strong></p>
+<p><strong>3. 目标有了，开始对其进行 cap 包的监听和获取，这里要让其中连接的设备重连才能抓包其握手包，可以慢慢等待，也可以使用 deauth 洪水攻击。</strong></p>
+<p><strong>root@huan:~#airodump-ng -c 9 –bssid 78:11:DC:10:4F:66 -w /root / 桌面 / wuxianpj/handshake/wlan0mon</strong></p>
+<p><strong>// -w 后面的路径是存放握手包的</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_r.jpg" alt=""></p>
+<p><strong>4. 另起窗口，我们用 deauth 洪水攻击，让其中的一台设备掉线，它掉线后会自动连接（除非别人在 wifi 设置中勾选掉了自动连接）</strong></p>
+<p><strong>root@huan:~#aireplay-ng -0 20 -c 6C:88:14:F2:47:8C -a 78:11:DC:10:4F:66 wlan0mon</strong></p>
+<p><strong>// -0 death 模式，20 为攻击次数，也可以设为 0，就是一直攻击</strong></p>
+<p><strong>// -c 这里自然就是连接上的某台设备的 MAC 地址了，指定它，我们让它稳稳地掉线。</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_r.jpg" alt=""></p>
+<p><strong>5. 看图，不废话</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_r.jpg" alt=""></p>
+<p><strong>6. 话不多说，上字典（关键东西），让它慢慢破去吧</strong></p>
+<p><strong>root@huan:~#aircrack-ng -w /root / 桌面 / wuxianpj/zidian/wordlist.txt /root / 桌面 / wuxianpj/handshake/-02.cap</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_r.jpg" alt=""></p>
+<p><strong>7. 没错下一步操作，退出 monitor 模式，别忘了喔</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg" alt=""></p>
+<p><strong>aircrack-ng 爆破 wifi 密码 – 命令清单</strong></p>
+<p><strong>~#airmon-ng start [网卡] // 开启 monitor 模式</strong></p>
+<p><strong>~#airodump-ng [网卡] // 捕获附件的 wifi 信息</strong></p>
+<p><strong>~#airodump-ng -c [信道]–bssid [路由器 MAC] -w [handshake-path] [网卡]</strong></p>
+<p><strong>~#aireplay-ng -0 [攻击次数值] -c [某连接设备 MAC] -a [路由器 MAC] [网卡]</strong></p>
+<p><strong>~#aircrack-ng -w [字典 - path] [破解的目标握手包 - path]</strong></p>
+<p><strong>~#airmon-ng stop [网卡] // 退出 monitor 模式</strong></p>
+<p>评论由作者筛选后显示</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/" data-id="ck4zesbnq0000t8wvcvx30o8r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Android Studio 添加okhttp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/">Android Studio 添加 okhttp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android Studio 添加okhttp</p>
+<p>下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation(&quot;com.squareup.okhttp3:okhttp:3.14.2&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
+<p>okhttpUtils</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &#39;com.zhy:okhttputils:2.6.2&#39;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/hongyangAndroid/okhttputils" target="_blank" rel="noopener">https://github.com/hongyangAndroid/okhttputils</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">根据发行说明，OkHttp要求您在构建中启用Java 8，以便从3.13及更高版本开始运行。您可以在https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;write&#x2F;java8-support上了解有关如何启用此功能的更多信息。</span><br><span class="line"></span><br><span class="line">你需要添加类似的东西</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        targetCompatibility &#x3D;  “ 8 ” </span><br><span class="line">        sourceCompatibility &#x3D;  “ 8 ”</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">到您的申请build.gradle</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/" data-id="ck4zesbp10001t8wv25l293jy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Android 启动页黑屏及最优解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Android 启动页黑屏</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<blockquote>
+<p>本文由 <a href="http://ksria.com/simpread/" target="_blank" rel="noopener">简悦 SimpRead</a> 转码， 原文地址 <a href="https://juejin.im/post/58ad90518ac2472a2ad9b684" target="_blank" rel="noopener">https://juejin.im/post/58ad90518ac2472a2ad9b684</a></p>
+</blockquote>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信做过 Android 的朋友都知道，当一个 APP 启动时，<strong>界面会首先展示一个白屏或者黑屏</strong>，然后再进入欢迎页，稍作停留最后进入 APP 主页。那么这个黑屏或者白屏到底是怎么一回事呢？它的最好的解决方案应该是怎样的呢？今天我们认真的讨论一下这个小问题。</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fladingwu%2FSplash">点击获取本次项目的 demo</a></p>
+<h2 id="历史原因"><a href="#历史原因" class="headerlink" title="历史原因"></a>历史原因</h2><p>当系统启动一个 APP 时，zygote 进程会首先创建一个新的进程去运行这个 APP，但是进程的创建是需要时间的，在创建完成之前，界面是呈现假死状态的，这就很尴尬了，因为用户会以为没有点到 APP 而再次点击，这极大的降低用户体验，Android 需要及时做出反馈去避免这段迷之尴尬。于是系统根据你的 manifest 文件设置的主题颜色的不同来展示一个白屏或者黑屏。<strong>而这个黑（白）屏正式的称呼应该是 Preview Window, 即预览窗口</strong>。</p>
+<p>好了，现在我们明白了，Preview Window 其实是为了提高用户体验而有意设定的。因此，其实如果不是强迫症，它可能并不是一个问题。</p>
+<p>但是我猜大部分小伙伴应该是和我一样的强迫症患者：这么丑的黑屏怎么能出现在我的 APP 上呢？？？！！！</p>
+<p>所以，下面我们就来聊聊这个问题的解决方案。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>既然决定解决这个问题，那么从哪里入手呢，Android 在选择展示黑屏或者白屏的时候，是根据你设定的主题而不同的，也就是说，虽然你的代码没有被执行，你的配置文件却被提前读取了，用来作为展示 Preview Window 界面的依据。</p>
+<p>所以，我们的解决方案的切入口就是整个 APP 的 manifest 文件，更确切的说应该是主题配置文件。</p>
+<h2 id="方案一-：开历史倒车"><a href="#方案一-：开历史倒车" class="headerlink" title="方案一 ：开历史倒车"></a>方案一 ：开历史倒车</h2><p>这个方案就是禁止加载 Preview Window，具体做法如下：</p>
+<p>style.xml</p>
+<pre><style @android:style/Theme.Holo.NoActionBar">
+   <item >true</item>
+</style>复制代码
+</pre>
+
+<p>将 APPTheme 设定为启动的 Activity 的主题，即可禁止 Preview Window，当然，也有人通过把 preview window 设置为全透明，也达成了类似的效果。</p>
+<p>结果就是，当你点击 APP 时，界面会无响应一段时间，然后进入 APP。</p>
+<p>我个人强烈<strong>不推荐</strong>这么做，因为 Android 想方设法提升的用户体验一下子被你打回解放前。</p>
+<h2 id="方案二：自定义-Preview-Window"><a href="#方案二：自定义-Preview-Window" class="headerlink" title="方案二：自定义 Preview Window"></a>方案二：自定义 Preview Window</h2><p>具体方法如下：</p>
+<p>style.xlm</p>
+<pre><style @android:style/Theme.Holo.NoActionBar">
+    <item >@drawable/splash_icon</item>
+</style>复制代码
+</pre>
+
+<p>同样将主题设置到启动的 Activity 的主题中，windowBackground 就是即将展示的 preview window。其中 splash_icon 可以是一整张图片，网上很多小伙伴也都是这么做的。其实它也可以是一个能解析出图片资源的 XML 文件，好像只有 layer-list 这种能做得到, 因为它能够将多个 drawable 叠加起来展示。</p>
+<p>splash_icon.xml</p>
+<pre><?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item android:drawable="@color/white"/>
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/qq"/>
+    </item>
+</layer-list>复制代码
+</pre>
+
+<p>这样设置之后，当你点击 APP，会立马进入你配置的界面，然后启动欢迎页，效果如下</p>
+<p><img src="https://lc-gold-cdn.xitu.io/838b008fdb18f761ede8.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p>那么，将 preview window 直接设置为图片和设置为 xml 文件有什么区别或者优劣呢？我先卖个关子。先谈谈这种方案的优劣，首先这种方案已经解决了原生 preview window 的单调难看的问题，在原来的基础上进一步提升了用户体验。可是我们的 APP 都是有欢（guang）迎（gao）页的，从 preview window 跳转到欢（guang）迎（gao）页是不可避免的，这样的话，两个界面的切换就会显得很突兀的，</p>
+<p>所以强迫症的我们，尝试让这两个界面的切换变成一个界面的变化，从而进一步提升显示效果，怎么样才能让两个界面切换看起来像是在同一个界面里的变化呢？答案就是： 动画。</p>
+<p>在这种需求下，图片和 xml 文件的区别就出来了，因为<strong>后者可以帮助我们更准确的实现动画。</strong></p>
+<h2 id="方案三：自定义-Preview-Window-增强版"><a href="#方案三：自定义-Preview-Window-增强版" class="headerlink" title="方案三：自定义 Preview Window 增强版"></a>方案三：自定义 Preview Window 增强版</h2><p>废话少说，我们先来看效果</p>
+<p><img src="https://lc-gold-cdn.xitu.io/2f5ba2feffca1ca31a8c.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p>有了动画之后，界面切换顺畅了许多。</p>
+<p>上面的动画实现其实非常简单，无非就是放缩，移动，渐变的组合使用（我仅仅用作范例给大家参考），具体的动画代码细节就不谈了，有兴趣可以<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fladingwu%2FSplash">去 github 上看本次项目的 demo</a>，我们重点来聊一聊思路。</p>
+<p>在这里我们需要明确一点的是，preview window 只能是静态图，它本身是不展示动画的，我们这里的动画，其实是在进入欢迎页之后的展示的。明确了这一点之后，整个动画效果的实现思路其实就已经摆在我们眼前了，那就是当界面从 <strong>Preview Window</strong> 跳转到 <strong>欢迎页</strong> 的时候，欢迎页必须首先展示一个和 <strong>Preview Window</strong> 一模一样的界面，让人看起来好像界面还没切换一样，然后再慢慢切换到欢迎页。</p>
+<p>然后，我们再来谈谈为什么设置 xml 的方式可以帮助我们更准确的实现动画，就是因为要保证 <strong>Preview Window</strong> 和<strong>欢迎页</strong>最开始展示的界面保持绝对一致，只有通过 xml 的布局才是达到这种效果。</p>
+<p>好了，启动页做到这个份儿上，应该就可以交货了，不过还有一个小问题需要大家注意的，那就是我们给 Preview Window 设置的背景图如果不做处理，图片就会一直存在于内存中，所以，当我们进入到欢迎页的时候，不要忘了把背景图设置为空：</p>
+<p>SplashActivity.java</p>
+<pre>    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        //将window的背景图设置为空
+        getWindow().setBackgroundDrawable(null);
+        super.onCreate(savedInstanceState);
+    }复制代码
+</pre>
+
+<p>到这里，关于 Android 启动页的相关问题就都讲完了。</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fladingwu%2FSplash">点击获取本次项目的 demo</a></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p><strong>1,</strong><br>这篇文章中，关于 Android 启动页的相关原理并没有从 Android framework 层的代码来做出解释，不过以后写到 framework 层的文章时候可能会提及这里。不过我想框架层的代码可能不是大家想关注的重点，因此我认为这篇文章应该是合适的。</p>
+<p><strong>2，</strong><br>近期，我准备从公司离职了，想换个环境。假如小伙伴们有 Android 相关的 offer，跪求大家给我内推一下，<strong>坐标：深圳 or 广州，Android 开发两年，Android 原生和 react-native 都能做，偏向原生</strong></p>
+<h2 id="勘误"><a href="#勘误" class="headerlink" title="勘误"></a>勘误</h2><p>暂无</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这是最终的高清的效果图，文件太大，你们可能加载不出来，就放在最后吧。</p>
+<p><img src="https://lc-gold-cdn.xitu.io/09e2d6cccbbdf90fb06f.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-id="ck4zesbpk0002t8wvd1zl9lfr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MySQL-5.7.26 解压版安装教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/MySQL-5.7.26%20%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/MySQL-5.7.26%20%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">安装解压版MySQL-5.7.26</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>1、MySQL-5.7.26 解压版下载地址</strong>：<a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/5.7.html#downloads</a></p>
+<p><strong>2、在解压根目录下添加 data 文件夹、my.ini 文件</strong></p>
+<p><strong>3、在 my.ini 文件中添加</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">port&#x3D;3306</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line">[mysqld]</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir&#x3D;D:&#x2F;mysql&#x2F;mysql-5.7.26-winx64</span><br><span class="line"># 设置mysql的数据目录</span><br><span class="line">datadir&#x3D;D:&#x2F;mysql&#x2F;mysql-5.7.26-winx64&#x2F;data</span><br><span class="line">character_set_server&#x3D;utf8</span><br><span class="line"># NO_ENGINE_SUBSTITUTION如果需要的存储引擎被禁用或未编译，那么抛出错误。</span><br><span class="line"># NO_AUTO_CREATE_USER防止GRANT自动创建新用户</span><br><span class="line"># STRICT_TRANS_TABLES在该模式下，如果一个值不能插入到一个事务表中，则中断当前的操作，对非事务表不做任何限制</span><br><span class="line">sql_mode&#x3D;NO_ENGINE_SUBSTITUTION,NO_AUTO_CREATE_USER,STRICT_TRANS_TABLES</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine&#x3D;INNODB</span><br><span class="line"># 开启查询缓存</span><br><span class="line">explicit_defaults_for_timestamp&#x3D;true</span><br><span class="line"># 跳过数据库权限验证(登陆后再设置密码，设置密码详见下面步骤)</span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
+
+<p><strong>4、配置环境变量 (在 Path 中添加)</strong></p>
+<p>D:/mysql/mysql-5.7.26-winx64</p>
+<p><strong>5、以管理员身份打开 dos 窗口进入 mysql 的 bin 目录下执行</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 安装</span><br><span class="line">mysqld -install</span><br><span class="line">&#x2F;&#x2F; 初始化</span><br><span class="line">mysqld --initialize-insecure </span><br><span class="line">&#x2F;&#x2F; 启动</span><br><span class="line">net start mysql</span><br><span class="line">&#x2F;&#x2F; 更改密码</span><br><span class="line">set password for root@localhost &#x3D; password(&#39;toor&#39;)</span><br><span class="line">&#x2F;&#x2F; 登陆</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/MySQL-5.7.26%20%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" data-id="ck4zesbqg0003t8wv403t7940" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Window打开服务的DOS命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/Window%E6%89%93%E5%BC%80%E6%9C%8D%E5%8A%A1%E7%9A%84DOS%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/Window%E6%89%93%E5%BC%80%E6%9C%8D%E5%8A%A1%E7%9A%84DOS%E5%91%BD%E4%BB%A4/">Window Dos 命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol start="31">
+<li><h4 id="regedit-exe—-注册表"><a href="#regedit-exe—-注册表" class="headerlink" title="regedit.exe—-注册表"></a>regedit.exe—-注册表</h4></li>
+<li><h4 id="msconfig-exe—系统配置实用程序"><a href="#msconfig-exe—系统配置实用程序" class="headerlink" title="msconfig.exe—系统配置实用程序"></a>msconfig.exe—系统配置实用程序</h4></li>
+<li><h4 id="services-msc—本地服务设置"><a href="#services-msc—本地服务设置" class="headerlink" title="services.msc—本地服务设置"></a>services.msc—本地服务设置</h4></li>
+<li><h4 id="regedit-exe—-注册表-1"><a href="#regedit-exe—-注册表-1" class="headerlink" title="regedit.exe—-注册表"></a>regedit.exe—-注册表</h4></li>
+<li><h4 id="osk————打开屏幕键盘"><a href="#osk————打开屏幕键盘" class="headerlink" title="osk————打开屏幕键盘"></a>osk————打开屏幕键盘</h4></li>
+<li><p>gpedit.msc—–组策略  </p>
+</li>
+<li><p>sndrec32——-录音机 </p>
+</li>
+<li><p>Nslookup——-IP地址侦测器 </p>
+</li>
+<li><p>explorer——-打开资源管理器 </p>
+</li>
+<li><p>logoff———注销命令 </p>
+</li>
+<li><p>tsshutdn——-60秒倒计时关机命令 </p>
+</li>
+<li><p>lusrmgr.msc—-本机用户和组 </p>
+</li>
+<li><p>services.msc—本地服务设置 </p>
+</li>
+<li><p>oobe/msoobe /a—-检查XP是否激活 </p>
+</li>
+<li><p>notepad——–打开记事本 </p>
+</li>
+<li><p>cleanmgr——-垃圾整理 </p>
+</li>
+<li><p>net start messenger—-开始信使服务 </p>
+</li>
+<li><p>compmgmt.msc—计算机管理 </p>
+</li>
+<li><p>net stop messenger—–停止信使服务 </p>
+</li>
+<li><p>conf———–启动netmeeting </p>
+</li>
+<li><p>dvdplay——–DVD播放器 </p>
+</li>
+<li><p>charmap——–启动字符映射表 </p>
+</li>
+<li><p>diskmgmt.msc—磁盘管理实用程序 </p>
+</li>
+<li><p>calc———–启动计算器 </p>
+</li>
+<li><p>dfrg.msc——-磁盘碎片整理程序 </p>
+</li>
+<li><p>chkdsk.exe—–Chkdsk磁盘检查 </p>
+</li>
+<li><p>devmgmt.msc— 设备管理器 </p>
+</li>
+<li><p>regsvr32 /u *.dll—-停止dll文件运行 </p>
+</li>
+<li><p>drwtsn32—— 系统医生 </p>
+</li>
+<li><p>rononce -p —-15秒关机 </p>
+</li>
+<li><p>dxdiag———检查DirectX信息 </p>
+</li>
+<li><p>regedt32——-注册表编辑器 </p>
+</li>
+<li><p>Msconfig.exe—系统配置实用程序 </p>
+</li>
+<li><p>rsop.msc——-组策略结果集 </p>
+</li>
+<li><p>mem.exe——–显示内存使用情况 </p>
+</li>
+<li><p>regedit.exe—-注册表 </p>
+</li>
+<li><p>winchat——–XP自带局域网聊天 </p>
+</li>
+<li><p>progman——–程序管理器 </p>
+</li>
+<li><p>winmsd———系统信息 </p>
+</li>
+<li><p>perfmon.msc—-计算机性能监测程序 </p>
+</li>
+<li><p>winver———检查Windows版本  </p>
+</li>
+<li><p>sfc /scannow—–扫描错误并复原 </p>
+</li>
+<li><p>taskmgr—–任务管理器（2000／xp／2003</p>
+</li>
+<li><p>wmimgmt.msc—-打开windows管理体系结构(WMI)  </p>
+</li>
+<li><p>wupdmgr——–windows更新程序  </p>
+</li>
+<li><p>wscript——–windows脚本宿主设置  </p>
+</li>
+<li><p>write———-写字板  </p>
+</li>
+<li><p>winmsd———系统信息  </p>
+</li>
+<li><p>wiaacmgr——-扫描仪和照相机向导  </p>
+</li>
+<li></li>
+<li><p>mem.exe——–显示内存使用情况  </p>
+</li>
+<li><p>msconfig.exe—系统配置实用程序  </p>
+</li>
+<li><p>mplayer2——-简易widnows media player  </p>
+</li>
+<li><p>mspaint——–画图板  </p>
+</li>
+<li><p>mstsc———-远程桌面连接  </p>
+</li>
+<li><p>mplayer2——-媒体播放机  </p>
+</li>
+<li><p>magnify——–放大镜实用程序  </p>
+</li>
+<li><p>mmc————打开控制台  </p>
+</li>
+<li><p>mobsync——–同步命令 </p>
+</li>
+<li><p>dxdiag———检查DirectX信息  </p>
+</li>
+<li><p>drwtsn32—— 系统医生  </p>
+</li>
+<li><p>devmgmt.msc— 设备管理器  </p>
+</li>
+<li><p>dfrg.msc——-磁盘碎片整理程序  </p>
+</li>
+<li><p>diskmgmt.msc—磁盘管理实用程序  </p>
+</li>
+<li><p>dcomcnfg——-打开系统组件服务  </p>
+</li>
+<li><p>ddeshare——-打开DDE共享设置  </p>
+</li>
+<li><p>dvdplay——–DVD播放器 </p>
+</li>
+<li><p>net stop messenger—–停止信使服务  </p>
+</li>
+<li><p>net start messenger—-开始信使服务  </p>
+</li>
+<li><p>notepad——–打开记事本  </p>
+</li>
+<li><p>nslookup——-网络管理的工具向导  </p>
+</li>
+<li><p>ntbackup——-系统备份和还原  </p>
+</li>
+<li><p>narrator——-屏幕“讲述人”  </p>
+</li>
+<li><p>ntmsmgr.msc—-移动存储管理器  </p>
+</li>
+<li><p>ntmsoprq.msc—移动存储管理员操作请求  </p>
+</li>
+<li><p>netstat -an—-(TC)命令检查接口 </p>
+</li>
+<li><p>syncapp——–创建一个公文包  </p>
+</li>
+<li><p>sysedit——–系统配置编辑器  </p>
+</li>
+<li><p>sigverif——-文件签名验证程序  </p>
+</li>
+<li><p>sndrec32——-录音机  </p>
+</li>
+<li><p>shrpubw——–创建共享文件夹  </p>
+</li>
+<li><p>secpol.msc—–本地安全策略  </p>
+</li>
+<li><p>syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码  </p>
+</li>
+<li><p>services.msc—本地服务设置  </p>
+</li>
+<li><p>Sndvol32——-音量控制程序  </p>
+</li>
+<li><p>sfc.exe——–系统文件检查器  </p>
+</li>
+<li><p>sfc /scannow—windows文件保护 </p>
+</li>
+<li><p>tsshutdn——-60秒倒计时关机命令  </p>
+</li>
+<li><p>tourstart——xp简介（安装完成后出现的漫游xp程序）  </p>
+</li>
+<li><p>taskmgr——–任务管理器 </p>
+</li>
+<li><p>eventvwr——-事件查看器  </p>
+</li>
+<li><p>eudcedit——-造字程序  </p>
+</li>
+<li><p>explorer——-打开资源管理器 </p>
+</li>
+<li><p>packager——-对象包装程序  </p>
+</li>
+<li><p>perfmon.msc—-计算机性能监测程序  </p>
+</li>
+<li><p>progman——–程序管理器 </p>
+</li>
+<li><p>regedit.exe—-注册表  </p>
+</li>
+<li><p>rsop.msc——-组策略结果集  </p>
+</li>
+<li><p>regedt32——-注册表编辑器  </p>
+</li>
+<li><p>rononce -p —-15秒关机  </p>
+</li>
+<li><p>regsvr32 /u *.dll—-停止dll文件运行  </p>
+</li>
+<li><p>regsvr32 /u zipfldr.dll——取消ZIP支持 </p>
+</li>
+<li><p>cmd.exe——–CMD命令提示符  </p>
+</li>
+<li><p>chkdsk.exe—–Chkdsk磁盘检查  </p>
+</li>
+<li><p>certmgr.msc—-证书管理实用程序  </p>
+</li>
+<li><p>calc———–启动计算器  </p>
+</li>
+<li><p>charmap——–启动字符映射表  </p>
+</li>
+<li><p>cliconfg——-SQL SERVER 客户端网络实用程序  </p>
+</li>
+<li><p>Clipbrd——–剪贴板查看器  </p>
+</li>
+<li><p>conf———–启动netmeeting  </p>
+</li>
+<li><p>compmgmt.msc—计算机管理  </p>
+</li>
+<li><p>cleanmgr——-垃圾整理  </p>
+</li>
+<li><p>ciadv.msc——索引服务程序 </p>
+</li>
+<li><p>osk————打开屏幕键盘  </p>
+</li>
+<li><p>odbcad32——-ODBC数据源管理器  </p>
+</li>
+<li><p>oobe/msoobe /a—-检查XP是否激活 </p>
+</li>
+<li><p>lusrmgr.msc—-本机用户和组  </p>
+</li>
+<li><p>logoff———注销命令 </p>
+</li>
+<li><p>iexpress——-木马捆绑工具，系统自带 </p>
+</li>
+<li><p>Nslookup——-IP地址侦测器 </p>
+</li>
+<li><p>fsmgmt.msc—–共享文件夹管理器 </p>
+</li>
+<li><p>utilman——–辅助工具管理器 </p>
+</li>
+<li><p>gpedit.msc—–组策略 </p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/Window%E6%89%93%E5%BC%80%E6%9C%8D%E5%8A%A1%E7%9A%84DOS%E5%91%BD%E4%BB%A4/" data-id="ck4zesbt40006t8wv65cw8tvq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,6 +957,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -129,9 +977,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li></ul>
     </div>
   </div>
 
@@ -139,12 +987,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2020/01/04/hello-world/">Hello World</a>
+            <a href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/">查看Windows端口</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/">windows右键添加VS code</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/">MySQL修改root密码的4种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/">android studio 导入其他项目工程报错解决方法 - fan7983377 的博客 - CSDN 博客</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/">Mysql5.7登录密码错误</a>
           </li>
         
       </ul>

