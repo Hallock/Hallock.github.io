@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Mysql5.7登录密码错误</title>
+    <url>/2020/01/03/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<p>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入:</p>
+<ol>
+<li>use mysql;</li>
+<li>update mysql.user  set password=password(‘root’) where user=’root’<ul>
+<li><strong>提示ERROR 1054 (42S22): Unknown column ‘password’ in ‘field list’</strong><a id="more"></a>
+<!-- more -->
+<blockquote>
+<p>原来是mysql数据库下已经没有password这个字段了，password字段改成了authentication_string</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="使用以下方式即可"><a href="#使用以下方式即可" class="headerlink" title="使用以下方式即可"></a>使用以下方式即可</h3><ol>
+<li>use mysql;</li>
+<li>update mysql.user set authentication_string=password(‘toor’) where user=’root’;</li>
+<li>flush privileges;   刷新权限（必须步骤）</li>
+<li>quit; (退出)</li>
+<li>mysql -u root -p （登录）<blockquote>
+<p>编辑my.ini文件删掉skip-grant-tables 这一行</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>MySql5.7</strong> 设置的密码中必须至少包含一个大写字母、一个小写字母、一个特殊符号、一个数字，密码长度至少为8个字符</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查看Windows端口</title>
+    <url>/2019/10/08/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/</url>
+    <content><![CDATA[<h2 id="查看Windows端口"><a href="#查看Windows端口" class="headerlink" title="查看Windows端口"></a>查看Windows端口</h2><ul>
+<li>netstat -ano 查看所有的端口占用信息。</li>
+<li>netstat -aon|findstr “8090” 查看指定的端口号，如8090</li>
+<li>tasklist|findstr “3184”  根据pid查看占用端口程序。<a id="more"></a>
+<!-- more --></li>
+<li>taskkill /f /t /im  <font color=RED>TNSLSNR.EXE</font>  使用命令taskkill /f /t /im 结束<font color=RED>TNSLSNR.EXE</font>的进程。</li>
+<li>netstat -na 显示本机连接情况及打开的端口</li>
+<li>telnet 测试端口是否开放 <ul>
+<li>例：telnet 127.0.0.1 8383</li>
+</ul>
+</li>
+</ul>
+<!-- more -->
+<h2 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h2><ul>
+<li>Port是端口类型</li>
+<li>Local Address代表本机IP地址和打开的端口号</li>
+<li>Foreign Address是远程计算机IP地址和端口号</li>
+<li>State表明当前的连接状态</li>
+<li>PID显示的是对应进程的PID</li>
+<li>State显示是LISTENING时表示处于侦听状态，就是说该端口是开放的，等待连接，但还没有被连接</li>
+<li>STABLISHED的意思是建立连接。表示两台机器正在通信。</li>
+<li>CLOSE_WAIT 对方主动关闭连接或者网络 异常导致连接中断</li>
+<li>TIME_WAIT 我方主动调用close()断开连接，收到对方确认后状态变为TIME_WAIT<h3 id="因此我们应该重点关注的是ESTABLISHED状态"><a href="#因此我们应该重点关注的是ESTABLISHED状态" class="headerlink" title="因此我们应该重点关注的是ESTABLISHED状态"></a>因此我们应该重点关注的是ESTABLISHED状态</h3><!-- more --></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL修改root密码的4种方法</title>
+    <url>/2019/09/08/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<ol>
+<li><p>使用set password命令 </p>
+<blockquote>
+<ol>
+<li>首先登录MySQL。 </li>
+<li>格式：mysql&gt; set password for 用户名@localhost = password(‘新密码’); <ul>
+<li>例子：mysql&gt; set password for root@localhost = password(‘123’);</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<a id="more"></a></li>
+<li><p>使用mysqladmin </p>
+<blockquote>
+<ol>
+<li>格式：mysqladmin -u用户名 -p旧密码 password 新密码 <ul>
+<li>例子：mysqladmin -uroot -p123456 password 123</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>用UPDATE直接编辑user表 </p>
+<blockquote>
+<p>首先登录MySQL。 </p>
+<ol>
+<li>mysql&gt; use mysql; </li>
+<li>mysql&gt; update user set password=password(‘123’) where user=’root’ and host=’localhost’; </li>
+<li>mysql&gt; flush privileges;</li>
+</ol>
+</blockquote>
+</li>
+<li><p>在忘记root密码的时候，可以这样 </p>
+<h3 id="以windows为例："><a href="#以windows为例：" class="headerlink" title="以windows为例："></a>以windows为例：</h3><blockquote>
+<ol>
+<li>关闭正在运行的MySQL服务。 </li>
+<li>打开DOS窗口，转到mysql\bin目录。 </li>
+<li>输入mysqld –skip-grant-tables 回车。–skip-grant-tables 的意思是启动MySQL服务的时候跳过权限表认证。 </li>
+<li>再开一个DOS窗口（因为刚才那个DOS窗口已经不能动了），转到mysql\bin目录。 </li>
+<li>输入mysql回车，如果成功，将出现MySQL提示符 &gt;。 </li>
+<li>连接权限数据库： use mysql; 。 </li>
+<li>改密码：update user set password=password(“123”) where user=”root”;（别忘了最后加分号） 。 </li>
+<li>刷新权限（必须步骤）：flush privileges;　。 </li>
+<li>退出 quit。 </li>
+<li>注销系统，再进入，使用用户名root和刚才设置的新密码123登录。</li>
+</ol>
+</blockquote>
+<!-- more --></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows右键添加VS code</title>
+    <url>/2019/09/07/Windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/</url>
+    <content><![CDATA[<h3 id="window-右键菜单添加-vscode"><a href="#window-右键菜单添加-vscode" class="headerlink" title="window 右键菜单添加 vscode"></a>window 右键菜单添加 vscode</h3><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><ul>
+<li><p>新建一个名为 1.reg 的文件，找一个记事本或者sublime打开，名称无所谓，但是一定需要带上 .reg 后缀。</p>
+</li>
+<li><p>查看你自己的电脑的vscode安装目录，最简单的方法就是右键桌面的vscode，查看属性就知道了。以我的安装地址为例：C:\Program Files\Microsoft VS Code\Code.exe ， 单反斜杠最好都换成双反斜杠。</p>
+</li>
+<li><p>复制以下内容到 1.reg 文件中。</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\*\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%1\""</span><br><span class="line"></span><br><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%V\""</span><br><span class="line"></span><br><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%V\""</span><br></pre></td></tr></table></figure>
+<ul>
+<li>替换所有vscode的安装路径。<br>双击这个文件，之后都选 “是”。</li>
+</ul>
+<p>版权声明：本文为CSDN博主「stu_yiliang」的原创文章，遵循 CC 4.0 BY-SA 版权协议，<br>原文链接：<a href="https://blog.csdn.net/GreekMrzzJ/article/details/82194913" target="_blank" rel="noopener">https://blog.csdn.net/GreekMrzzJ/article/details/82194913</a></p>
+<!-- more -->]]></content>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>aircrack-ng 使用</title>
+    <url>/2019/07/15/Aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
+<a id="more"></a>
+<p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt=""></p>
+<p><strong>输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg" alt=""></p>
+<p><strong>开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。</strong></p>
+<p><img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg" alt="">)<img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg" alt=""></p>
+<p><strong>按提示操作的结果：</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg" alt=""></p>
+<p><strong>监听网络，完了 Ctrl+C 退出。</strong></p>
+<p>airodump-ng  wlan0mon</p>
+<p><img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_r.jpg" alt=""></p>
+<p><strong>主要参数说明：</strong></p>
+<p><strong>#BSSID ：路由器、AP 的 MAC 地址</strong></p>
+<p><strong># PWR ：信号强度，一看就是越小越强了</strong></p>
+<p><strong># #Data ：传输的数据大小，大的可能在下载或看视频什么的</strong></p>
+<p><strong># CH ：无线信道，要看准</strong></p>
+<p><strong># ENC ：加密协议，自 WPA2 协议爆出重大安全漏洞，现已经出 WPA3，坐等更新</strong></p>
+<p><strong># ESSID ：这个就不用多说了，wifi 名称，有中文可能会出现乱码哈</strong></p>
+<p><strong>3. 目标有了，开始对其进行 cap 包的监听和获取，这里要让其中连接的设备重连才能抓包其握手包，可以慢慢等待，也可以使用 deauth 洪水攻击。</strong></p>
+<p><strong>root@huan:~#airodump-ng -c 9 –bssid 78:11:DC:10:4F:66 -w /root / 桌面 / wuxianpj/handshake/wlan0mon</strong></p>
+<p><strong>// -w 后面的路径是存放握手包的</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_r.jpg" alt=""></p>
+<p><strong>4. 另起窗口，我们用 deauth 洪水攻击，让其中的一台设备掉线，它掉线后会自动连接（除非别人在 wifi 设置中勾选掉了自动连接）</strong></p>
+<p><strong>root@huan:~#aireplay-ng -0 20 -c 6C:88:14:F2:47:8C -a 78:11:DC:10:4F:66 wlan0mon</strong></p>
+<p><strong>// -0 death 模式，20 为攻击次数，也可以设为 0，就是一直攻击</strong></p>
+<p><strong>// -c 这里自然就是连接上的某台设备的 MAC 地址了，指定它，我们让它稳稳地掉线。</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_r.jpg" alt=""></p>
+<p><strong>5. 看图，不废话</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_r.jpg" alt=""></p>
+<p><strong>6. 话不多说，上字典（关键东西），让它慢慢破去吧</strong></p>
+<p><strong>root@huan:~#aircrack-ng -w /root / 桌面 / wuxianpj/zidian/wordlist.txt /root / 桌面 / wuxianpj/handshake/-02.cap</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_r.jpg" alt=""></p>
+<p><strong>7. 没错下一步操作，退出 monitor 模式，别忘了喔</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg" alt=""></p>
+<p><strong>aircrack-ng 爆破 wifi 密码 – 命令清单</strong></p>
+<p><strong>~#airmon-ng start [网卡] // 开启 monitor 模式</strong></p>
+<p><strong>~#airodump-ng [网卡] // 捕获附件的 wifi 信息</strong></p>
+<p><strong>~#airodump-ng -c [信道]–bssid [路由器 MAC] -w [handshake-path] [网卡]</strong></p>
+<p><strong>~#aireplay-ng -0 [攻击次数值] -c [某连接设备 MAC] -a [路由器 MAC] [网卡]</strong></p>
+<p><strong>~#aircrack-ng -w [字典 - path] [破解的目标握手包 - path]</strong></p>
+<p><strong>~#airmon-ng stop [网卡] // 退出 monitor 模式</strong></p>
+<!-- more -->]]></content>
+      <tags>
+        <tag>Kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mysql8.0.15时区问题</title>
+    <url>/2019/07/15/MySQL8.0.15%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="MySQL8-0-15时区问题"><a href="#MySQL8-0-15时区问题" class="headerlink" title="MySQL8.0.15时区问题"></a>MySQL8.0.15时区问题</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">//localhost:3306/spring</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<!-- more -->
+<h4 id="后面加上：-serverTimezone-UTC"><a href="#后面加上：-serverTimezone-UTC" class="headerlink" title="后面加上：?serverTimezone=UTC"></a>后面加上：?serverTimezone=UTC</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">//localhost:3306/spring?serverTimezone=UTC</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装解压版MySQL-5.7.26</title>
+    <url>/2019/07/15/MySQL-5.7.26%20%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><strong>1. MySQL-5.7.26 解压版下载地址</strong>：<a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener">MySql5.7</a></p>
+<p><strong>2. 在解压根目录下添加 data 文件夹、my.ini 文件</strong></p>
+<a id="more"></a>
+<!-- more -->
+
+<p><strong>3. 在 my.ini 文件中添加</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[client]</span><br><span class="line">port&#x3D;3306</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line">[mysqld]</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir&#x3D;D:&#x2F;mysql&#x2F;mysql-5.7.26-winx64</span><br><span class="line"># 设置mysql的数据目录</span><br><span class="line">datadir&#x3D;D:&#x2F;mysql&#x2F;mysql-5.7.26-winx64&#x2F;data</span><br><span class="line">character_set_server&#x3D;utf8</span><br><span class="line"># NO_ENGINE_SUBSTITUTION如果需要的存储引擎被禁用或未编译，那么抛出错误。</span><br><span class="line"># NO_AUTO_CREATE_USER防止GRANT自动创建新用户</span><br><span class="line"># STRICT_TRANS_TABLES在该模式下，如果一个值不能插入到一个事务表中，则中断当前的操作，对非事务表不做任何限制</span><br><span class="line">sql_mode&#x3D;NO_ENGINE_SUBSTITUTION,NO_AUTO_CREATE_USER,STRICT_TRANS_TABLES</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine&#x3D;INNODB</span><br><span class="line"># 开启查询缓存</span><br><span class="line">explicit_defaults_for_timestamp&#x3D;true</span><br><span class="line"># 跳过数据库权限验证(登陆后再设置密码，设置密码详见下面步骤)</span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
+
+<p><strong>4、配置环境变量 (在 Path 中添加)</strong></p>
+<p>D:/mysql/mysql-5.7.26-winx64</p>
+<p><strong>5、以管理员身份打开 dos 窗口进入 mysql 的 bin 目录下执行</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 安装</span><br><span class="line">mysqld -install</span><br><span class="line">&#x2F;&#x2F; 初始化</span><br><span class="line">mysqld --initialize-insecure </span><br><span class="line">&#x2F;&#x2F; 启动</span><br><span class="line">net start mysql</span><br><span class="line">&#x2F;&#x2F; 更改密码</span><br><span class="line">set password for root@localhost &#x3D; password(&#39;toor&#39;)</span><br><span class="line">&#x2F;&#x2F; 登陆</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Window Dos 命令</title>
+    <url>/2019/07/15/Windows%E6%89%93%E5%BC%80%E6%9C%8D%E5%8A%A1%E7%9A%84DOS%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<ol>
+<li><p>regedit.exe—-注册表</p>
+</li>
+<li><p>msconfig.exe—系统配置实用程序  </p>
+</li>
+<li><p>services.msc—本地服务设置 </p>
+</li>
+<li><p>regedit.exe—-注册表  </p>
+<a id="more"></a></li>
+<li><p>osk————打开屏幕键盘  </p>
+</li>
+<li><p>gpedit.msc—–组策略  </p>
+</li>
+<li><p>sndrec32——-录音机 </p>
+</li>
+<li><p>Nslookup——-IP地址侦测器 </p>
+</li>
+<li><p>explorer——-打开资源管理器 </p>
+</li>
+<li><p>logoff———注销命令 </p>
+</li>
+<li><p>tsshutdn——-60秒倒计时关机命令 </p>
+</li>
+<li><p>lusrmgr.msc—-本机用户和组 </p>
+</li>
+<li><p>services.msc—本地服务设置 </p>
+</li>
+<li><p>oobe/msoobe /a—-检查XP是否激活 </p>
+</li>
+<li><p>notepad——–打开记事本 </p>
+</li>
+<li><p>cleanmgr——-垃圾整理 </p>
+</li>
+<li><p>net start messenger—-开始信使服务 </p>
+</li>
+<li><p>compmgmt.msc—计算机管理 </p>
+</li>
+<li><p>net stop messenger—–停止信使服务 </p>
+</li>
+<li><p>conf———–启动netmeeting </p>
+</li>
+<li><p>dvdplay——–DVD播放器 </p>
+</li>
+<li><p>charmap——–启动字符映射表 </p>
+</li>
+<li><p>diskmgmt.msc—磁盘管理实用程序 </p>
+</li>
+<li><p>calc———–启动计算器 </p>
+</li>
+<li><p>dfrg.msc——-磁盘碎片整理程序 </p>
+</li>
+<li><p>chkdsk.exe—–Chkdsk磁盘检查 </p>
+</li>
+<li><p>devmgmt.msc— 设备管理器 </p>
+</li>
+<li><p>regsvr32 /u *.dll—-停止dll文件运行 </p>
+</li>
+<li><p>drwtsn32—— 系统医生 </p>
+</li>
+<li><p>rononce -p —-15秒关机 </p>
+</li>
+<li><p>dxdiag———检查DirectX信息 </p>
+</li>
+<li><p>regedt32——-注册表编辑器 </p>
+</li>
+<li><p>Msconfig.exe—系统配置实用程序 </p>
+</li>
+<li><p>rsop.msc——-组策略结果集 </p>
+</li>
+<li><p>mem.exe——–显示内存使用情况 </p>
+</li>
+<li><p>regedit.exe—-注册表 </p>
+</li>
+<li><p>winchat——–XP自带局域网聊天 </p>
+</li>
+<li><p>progman——–程序管理器 </p>
+</li>
+<li><p>winmsd———系统信息 </p>
+</li>
+<li><p>perfmon.msc—-计算机性能监测程序 </p>
+</li>
+<li><p>winver———检查Windows版本  </p>
+</li>
+<li><p>sfc /scannow—–扫描错误并复原 </p>
+</li>
+<li><p>taskmgr—–任务管理器（2000／xp／2003</p>
+</li>
+<li><p>wmimgmt.msc—-打开windows管理体系结构(WMI)  </p>
+</li>
+<li><p>wupdmgr——–windows更新程序  </p>
+</li>
+<li><p>wscript——–windows脚本宿主设置  </p>
+</li>
+<li><p>write———-写字板  </p>
+</li>
+<li><p>winmsd———系统信息  </p>
+</li>
+<li><p>wiaacmgr——-扫描仪和照相机向导  </p>
+</li>
+<li><p>mem.exe——–显示内存使用情况  </p>
+</li>
+<li><p>msconfig.exe—系统配置实用程序  </p>
+</li>
+<li><p>mplayer2——-简易widnows media player  </p>
+</li>
+<li><p>mspaint——–画图板  </p>
+</li>
+<li><p>mstsc———-远程桌面连接  </p>
+</li>
+<li><p>mplayer2——-媒体播放机  </p>
+</li>
+<li><p>magnify——–放大镜实用程序  </p>
+</li>
+<li><p>mmc————打开控制台  </p>
+</li>
+<li><p>mobsync——–同步命令 </p>
+</li>
+<li><p>dxdiag———检查DirectX信息  </p>
+</li>
+<li><p>drwtsn32—— 系统医生  </p>
+</li>
+<li><p>devmgmt.msc— 设备管理器  </p>
+</li>
+<li><p>dfrg.msc——-磁盘碎片整理程序  </p>
+</li>
+<li><p>diskmgmt.msc—磁盘管理实用程序  </p>
+</li>
+<li><p>dcomcnfg——-打开系统组件服务  </p>
+</li>
+<li><p>ddeshare——-打开DDE共享设置  </p>
+</li>
+<li><p>dvdplay——–DVD播放器 </p>
+</li>
+<li><p>net stop messenger—–停止信使服务  </p>
+</li>
+<li><p>net start messenger—-开始信使服务  </p>
+</li>
+<li><p>notepad——–打开记事本  </p>
+</li>
+<li><p>nslookup——-网络管理的工具向导  </p>
+</li>
+<li><p>ntbackup——-系统备份和还原  </p>
+</li>
+<li><p>narrator——-屏幕“讲述人”  </p>
+</li>
+<li><p>ntmsmgr.msc—-移动存储管理器  </p>
+</li>
+<li><p>ntmsoprq.msc—移动存储管理员操作请求  </p>
+</li>
+<li><p>netstat -an—-(TC)命令检查接口 </p>
+</li>
+<li><p>syncapp——–创建一个公文包  </p>
+</li>
+<li><p>sysedit——–系统配置编辑器  </p>
+</li>
+<li><p>sigverif——-文件签名验证程序  </p>
+</li>
+<li><p>sndrec32——-录音机  </p>
+</li>
+<li><p>shrpubw——–创建共享文件夹  </p>
+</li>
+<li><p>secpol.msc—–本地安全策略  </p>
+</li>
+<li><p>syskey———系统加密，一旦加密就不能解开，保护windows xp系统的双重密码</p>
+</li>
+<li><p>services.msc—本地服务设置  </p>
+</li>
+<li><p>Sndvol32——-音量控制程序  </p>
+</li>
+<li><p>sfc.exe——–系统文件检查器  </p>
+</li>
+<li><p>sfc /scannow—windows文件保护 </p>
+</li>
+<li><p>tsshutdn——-60秒倒计时关机命令  </p>
+</li>
+<li><p>tourstart——xp简介（安装完成后出现的漫游xp程序）  </p>
+</li>
+<li><p>taskmgr——–任务管理器 </p>
+</li>
+<li><p>eventvwr——-事件查看器  </p>
+</li>
+<li><p>eudcedit——-造字程序  </p>
+</li>
+<li><p>explorer——-打开资源管理器 </p>
+</li>
+<li><p>packager——-对象包装程序  </p>
+</li>
+<li><p>perfmon.msc—-计算机性能监测程序  </p>
+</li>
+<li><p>progman——–程序管理器 </p>
+</li>
+<li><p>regedit.exe—-注册表  </p>
+</li>
+<li><p>rsop.msc——-组策略结果集  </p>
+</li>
+<li><p>regedt32——-注册表编辑器  </p>
+</li>
+<li><p>rononce -p —-15秒关机  </p>
+</li>
+<li><p>regsvr32 /u *.dll—-停止dll文件运行  </p>
+</li>
+<li><p>regsvr32 /u zipfldr.dll——取消ZIP支持 </p>
+</li>
+<li><p>cmd.exe——–CMD命令提示符  </p>
+</li>
+<li><p>chkdsk.exe—–Chkdsk磁盘检查  </p>
+</li>
+<li><p>certmgr.msc—-证书管理实用程序  </p>
+</li>
+<li><p>calc———–启动计算器  </p>
+</li>
+<li><p>charmap——–启动字符映射表  </p>
+</li>
+<li><p>cliconfg——-SQL SERVER 客户端网络实用程序  </p>
+</li>
+<li><p>Clipbrd——–剪贴板查看器  </p>
+</li>
+<li><p>conf———–启动netmeeting  </p>
+</li>
+<li><p>compmgmt.msc—计算机管理  </p>
+</li>
+<li><p>cleanmgr——-垃圾整理  </p>
+</li>
+<li><p>ciadv.msc——索引服务程序 </p>
+</li>
+<li><p>osk————打开屏幕键盘  </p>
+</li>
+<li><p>odbcad32——-ODBC数据源管理器  </p>
+</li>
+<li><p>oobe/msoobe /a—-检查XP是否激活 </p>
+</li>
+<li><p>lusrmgr.msc—-本机用户和组  </p>
+</li>
+<li><p>logoff———注销命令 </p>
+</li>
+<li><p>iexpress——-木马捆绑工具，系统自带 </p>
+</li>
+<li><p>Nslookup——-IP地址侦测器 </p>
+</li>
+<li><p>fsmgmt.msc—–共享文件夹管理器 </p>
+</li>
+<li><p>utilman——–辅助工具管理器 </p>
+</li>
+<li><p>gpedit.msc—–组策略 </p>
+<!-- more --></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android Studio 添加 okhttp</title>
+    <url>/2019/07/15/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/</url>
+    <content><![CDATA[<p>Android Studio 添加okhttp</p>
+<p>下载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">implementation(&quot;com.squareup.okhttp3:okhttp:3.14.2&quot;)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<!-- more -->
+<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
+<p>okhttpUtils</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">compile &#39;com.zhy:okhttputils:2.6.2&#39;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/hongyangAndroid/okhttputils" target="_blank" rel="noopener">https://github.com/hongyangAndroid/okhttputils</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">根据发行说明，OkHttp要求您在构建中启用Java 8，以便从3.13及更高版本开始运行。您可以在https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;write&#x2F;java8-support上了解有关如何启用此功能的更多信息。</span><br><span class="line"></span><br><span class="line">你需要添加类似的东西</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        targetCompatibility &#x3D;  “ 8 ” </span><br><span class="line">        sourceCompatibility &#x3D;  “ 8 ”</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">到您的申请build.gradle</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>原码反码补码</title>
+    <url>/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/</url>
+    <content><![CDATA[<p>原码</p>
+<ul>
+<li><p>就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。</p>
+</li>
+<li><p>通过一个字节，也就是8个二进制位表示 +7和 -7</p>
+</li>
+<li><p>0（符号位） 0000111   （+7  正数）</p>
+</li>
+<li><p>1（符号位） 0000111   （-7   负数）</p>
+<a id="more"></a>
+<!-- more -->
+<p>反码</p>
+</li>
+<li><p>正数的反码与其源码相同； 负数的反码是对其源码逐位取反，但符号位除外。</p>
+</li>
+</ul>
+<p>补码</p>
+<ul>
+<li>正数的补码与其原码相同； 负数的补码是在其反码的末位加1</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>反码：</th>
+<th>补码：</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0 0000111 +7（原码）</td>
+<td>0  0000111  +7（原码）</td>
+</tr>
+<tr>
+<td>0 0000111 +7（反码）</td>
+<td>0  0000111  +7（补码）</td>
+</tr>
+<tr>
+<td>1 0000111 -7 （原码）</td>
+<td>1  1111000   -7（反码）</td>
+</tr>
+<tr>
+<td>1 1111000 -7 （反码）</td>
+<td>1  1111001   -7（补码）</td>
+</tr>
+</tbody></table>
+<p><strong>正数与负数补码相加为0</strong></p>
+<pre><code>    0 0000111                                
++    0 1111001                
+-----------------------                          
+   10 0000000            （1超出八位被砍掉）
+-----------------------
+    0 0000000</code></pre><p>1加1得2由于二进制没有2所以保留0向前进1从左到右计算。</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+</search>
