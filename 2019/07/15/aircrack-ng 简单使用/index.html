@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。 ) 输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。 ) 开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。 ) 按提示操作的结果： ) 监听">
+  <meta name="description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="aircrack-ng 使用">
-<meta property="og:url" content="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/index.html">
-<meta property="og:site_name" content="Hallock">
-<meta property="og:description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。 ) 输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。 ) 开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。 ) 按提示操作的结果： ) 监听">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg">
@@ -74,12 +74,13 @@
 <meta property="og:image" content="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg">
 <meta property="article:published_time" content="2019-07-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-09-12T11:15:58.252Z">
+<meta property="article:modified_time" content="2020-01-05T14:43:16.140Z">
 <meta property="article:author" content="Hallock">
+<meta property="article:tag" content="Kali">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg">
 
-<link rel="canonical" href="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/">
+<link rel="canonical" href="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
 
 <script id="page-configurations">
@@ -91,7 +92,7 @@
   };
 </script>
 
-  <title>aircrack-ng 使用 | Hallock</title>
+  <title>aircrack-ng 使用 | </title>
   
 
 
@@ -135,7 +136,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hallock</span>
+        <span class="site-title"></span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -161,12 +162,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">1</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
 
   </li>
   </ul>
@@ -195,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%A0%B4%E8%A7%A3%20wifi%20%E5%AF%86%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -204,7 +205,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -225,7 +226,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-12 19:15:58" itemprop="dateModified" datetime="2019-09-12T19:15:58+08:00">2019-09-12</time>
+                <time title="修改时间：2020-01-05 22:43:16" itemprop="dateModified" datetime="2020-01-05T22:43:16+08:00">2020-01-05</time>
               </span>
 
           
@@ -241,14 +242,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -261,6 +262,7 @@
 
       
         <p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
+<a id="more"></a>
 <p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt=""></p>
 <p><strong>输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。</strong></p>
 <p><img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg" alt=""></p>
@@ -301,8 +303,7 @@
 <p><strong>~#aireplay-ng -0 [攻击次数值] -c [某连接设备 MAC] -a [路由器 MAC] [网卡]</strong></p>
 <p><strong>~#aircrack-ng -w [字典 - path] [破解的目标握手包 - path]</strong></p>
 <p><strong>~#airmon-ng stop [网卡] // 退出 monitor 模式</strong></p>
-<p>评论由作者筛选后显示</p>
-
+<!-- more -->
     </div>
 
     
@@ -310,6 +311,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Kali/" rel="tag"># Kali</a>
+          </div>
 
         
 
@@ -396,14 +400,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -438,13 +442,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">8k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 
         

@@ -47,9 +47,9 @@
 </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hallock">
+<meta property="og:title">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hallock">
+<meta property="og:site_name">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Hallock">
 <meta name="twitter:card" content="summary">
@@ -66,7 +66,7 @@
   };
 </script>
 
-  <title>Hallock</title>
+  <title></title>
   
 
 
@@ -110,7 +110,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hallock</span>
+        <span class="site-title"></span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -136,12 +136,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">1</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">12</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
 
   </li>
   </ul>
@@ -170,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,12 +179,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/" class="post-title-link" itemprop="url">查看Windows端口</a>
+            <a href="/2020/01/03/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/" class="post-title-link" itemprop="url">Mysql5.7登录密码错误</a>
         </h1>
 
         <div class="post-meta">
@@ -194,14 +194,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-01-04 17:52:43" itemprop="dateCreated datePublished" datetime="2020-01-04T17:52:43+08:00">2020-01-04</time>
+              <time title="创建时间：2020-01-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-03T00:00:00+08:00">2020-01-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-05 14:05:15" itemprop="dateModified" datetime="2020-01-05T14:05:15+08:00">2020-01-05</time>
+                <time title="修改时间：2020-01-05 22:07:31" itemprop="dateModified" datetime="2020-01-05T22:07:31+08:00">2020-01-05</time>
               </span>
 
           <br>
@@ -210,14 +210,104 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>478</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入:</p>
+<ol>
+<li>use mysql;</li>
+<li>update mysql.user  set password=password(‘root’) where user=’root’<ul>
+<li><strong>提示ERROR 1054 (42S22): Unknown column ‘password’ in ‘field list’</strong>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/03/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hallock">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/08/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/" class="post-title-link" itemprop="url">查看Windows端口</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-10-08T00:00:00+08:00">2019-10-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-05 22:23:40" itemprop="dateModified" datetime="2020-01-05T22:23:40+08:00">2020-01-05</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>507</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -232,17 +322,10 @@
           <h2 id="查看Windows端口"><a href="#查看Windows端口" class="headerlink" title="查看Windows端口"></a>查看Windows端口</h2><ul>
 <li>netstat -ano 查看所有的端口占用信息。</li>
 <li>netstat -aon|findstr “8090” 查看指定的端口号，如8090</li>
-<li>tasklist|findstr “3184”  根据pid查看占用端口程序。</li>
-<li>taskkill /f /t /im  <font color=RED>TNSLSNR.EXE</font>  使用命令taskkill /f /t /im 结束<font color=RED>TNSLSNR.EXE</font>的进程。</li>
-<li>netstat -na 显示本机连接情况及打开的端口</li>
-<li>telnet 测试端口是否开放 <ul>
-<li>例：telnet 127.0.0.1 8383</li>
-</ul>
-</li>
-</ul>
+<li>tasklist|findstr “3184”  根据pid查看占用端口程序。
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/01/04/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/#more" rel="contents">
+              <a class="btn" href="/2019/10/08/%E6%9F%A5%E7%9C%8BWindows%E7%AB%AF%E5%8F%A3/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -266,7 +349,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/08/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -275,12 +358,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/" class="post-title-link" itemprop="url">windows右键添加VS code</a>
+            <a href="/2019/09/08/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">MySQL修改root密码的4种方法</a>
         </h1>
 
         <div class="post-meta">
@@ -290,14 +373,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-01-04 17:52:43" itemprop="dateCreated datePublished" datetime="2020-01-04T17:52:43+08:00">2020-01-04</time>
+              <time title="创建时间：2019-09-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-08T00:00:00+08:00">2019-09-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-03 13:00:34" itemprop="dateModified" datetime="2020-01-03T13:00:34+08:00">2020-01-03</time>
+                <time title="修改时间：2020-01-05 22:41:45" itemprop="dateModified" datetime="2020-01-05T22:41:45+08:00">2020-01-05</time>
               </span>
 
           <br>
@@ -306,107 +389,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>738</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="window-右键菜单添加-vscode"><a href="#window-右键菜单添加-vscode" class="headerlink" title="window 右键菜单添加 vscode"></a>window 右键菜单添加 vscode</h3><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><ul>
-<li><p>新建一个名为 1.reg 的文件，找一个记事本或者sublime打开，名称无所谓，但是一定需要带上 .reg 后缀。</p>
-</li>
-<li><p>查看你自己的电脑的vscode安装目录，最简单的方法就是右键桌面的vscode，查看属性就知道了。以我的安装地址为例：C:\Program Files\Microsoft VS Code\Code.exe ， 单反斜杠最好都换成双反斜杠。</p>
-</li>
-<li><p>复制以下内容到 1.reg 文件中。<br>Windows Registry Editor Version 5.00</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\*\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%1\""</span><br><span class="line"></span><br><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%V\""</span><br><span class="line"></span><br><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\VSCode]</span><br><span class="line">@="Open with Code"</span><br><span class="line">"Icon"="C:\\Program Files\\Microsoft VS Code\\Code.exe"</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\VSCode\command]</span><br><span class="line">@="\"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"%V\""</span><br></pre></td></tr></table></figure>
-<ul>
-<li>替换所有vscode的安装路径。<br>双击这个文件，之后都选 “是”。</li>
-</ul>
-<p>版权声明：本文为CSDN博主「stu_yiliang」的原创文章，遵循 CC 4.0 BY-SA 版权协议，<br>原文链接：<a href="https://blog.csdn.net/GreekMrzzJ/article/details/82194913" target="_blank" rel="noopener">https://blog.csdn.net/GreekMrzzJ/article/details/82194913</a></p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/04/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hallock">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">MySQL修改root密码的4种方法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-01-04 17:52:43 / 修改时间：18:01:15" itemprop="dateCreated datePublished" datetime="2020-01-04T17:52:43+08:00">2020-01-04</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -429,48 +419,9 @@
 </li>
 </ol>
 </blockquote>
-</li>
-<li><p>使用mysqladmin </p>
-<blockquote>
-<ol>
-<li>格式：mysqladmin -u用户名 -p旧密码 password 新密码 <ul>
-<li>例子：mysqladmin -uroot -p123456 password 123</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-</li>
-<li><p>用UPDATE直接编辑user表 </p>
-<blockquote>
-<p>首先登录MySQL。 </p>
-<ol>
-<li>mysql&gt; use mysql; </li>
-<li>mysql&gt; update user set password=password(‘123’) where user=’root’ and host=’localhost’; </li>
-<li>mysql&gt; flush privileges;</li>
-</ol>
-</blockquote>
-</li>
-<li><p>在忘记root密码的时候，可以这样 </p>
-<h3 id="以windows为例："><a href="#以windows为例：" class="headerlink" title="以windows为例："></a>以windows为例：</h3><blockquote>
-<ol>
-<li>关闭正在运行的MySQL服务。 </li>
-<li>打开DOS窗口，转到mysql\bin目录。 </li>
-<li>输入mysqld –skip-grant-tables 回车。–skip-grant-tables 的意思是启动MySQL服务的时候跳过权限表认证。 </li>
-<li>再开一个DOS窗口（因为刚才那个DOS窗口已经不能动了），转到mysql\bin目录。 </li>
-<li>输入mysql回车，如果成功，将出现MySQL提示符 &gt;。 </li>
-<li>连接权限数据库： use mysql; 。 </li>
-<li>改密码：update user set password=password(“123”) where user=”root”;（别忘了最后加分号） 。 </li>
-<li>刷新权限（必须步骤）：flush privileges;　。 </li>
-<li>退出 quit。 </li>
-<li>注销系统，再进入，使用用户名root和刚才设置的新密码123登录。</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/01/04/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/#more" rel="contents">
+              <a class="btn" href="/2019/09/08/MySQL%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81%E7%9A%844%E7%A7%8D%E6%96%B9%E6%B3%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -494,7 +445,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -503,12 +454,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">android studio 导入其他项目工程报错解决方法 - fan7983377 的博客 - CSDN 博客</a>
+            <a href="/2019/09/07/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/" class="post-title-link" itemprop="url">windows右键添加VS code</a>
         </h1>
 
         <div class="post-meta">
@@ -518,14 +469,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-01-04 17:52:43" itemprop="dateCreated datePublished" datetime="2020-01-04T17:52:43+08:00">2020-01-04</time>
+              <time title="创建时间：2019-09-07 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-07T00:00:00+08:00">2019-09-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-03 12:38:36" itemprop="dateModified" datetime="2020-01-03T12:38:36+08:00">2020-01-03</time>
+                <time title="修改时间：2020-01-05 22:39:02" itemprop="dateModified" datetime="2020-01-05T22:39:02+08:00">2020-01-05</time>
               </span>
 
           <br>
@@ -534,14 +485,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -553,148 +504,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Android studio（简称 as），谷歌的亲儿子，基本是目前编写 Android 软件的最好的开发工具，之前用习惯了 eclipse，刚开始使用 as 怎么都不习惯，但是，能坚持使用 as 一个月，你会发现，eclipse 真不好用，as 各种爽。个人推荐还在用 eclipse 的可以选择 as 试试</p>
-<p>好了，闲话不多说，相信很多刚开始使用 as 时，会遇到各种各样的问题，比如我之前最头疼的就是导入别人的 demo，各种报错，解决都不知道怎么解决，网上搜，基本没什么用，下面说一下我摸索出来的方法</p>
-<p>转载注明：<a href="http://blog.csdn.net/fan7983377/article/details/51679199" target="_blank" rel="noopener">http://blog.csdn.net/fan7983377/article/details/51679199</a></p>
-<p>也是我偶然间发现的，在 as 上使用 svn 合作开发时，上传项目之前会屏蔽一些目录，如：</p>
-<p><img src="https://img-blog.csdn.net/20160615094411351" alt></p>
-<p>而别人从 svn 上下载下来的 as 项目就可以正常运行，然后我就想，会不会是这些文件的问题，于是，死马当活马医，试试。</p>
-<p><strong>第一步：先打开下载的 as 工程，把上面屏蔽目录里面的文件及文件夹都给删除掉</strong></p>
-<p>打开工程，可以看到下面的结构：<br><img src="https://img-blog.csdn.net/20160615095917870" alt></p>
-<p>所需要删除的文件：</p>
-<pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-//xxx代表你下载的项目名字
-
-xxx\.gradle
-xxx\.idea
-xxx\app\build
-xxx\app\*.iml
-xxx\*.iml
-xxx\local.properties
-
-</pre>
+          <h3 id="window-右键菜单添加-vscode"><a href="#window-右键菜单添加-vscode" class="headerlink" title="window 右键菜单添加 vscode"></a>window 右键菜单添加 vscode</h3><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><ul>
+<li><p>新建一个名为 1.reg 的文件，找一个记事本或者sublime打开，名称无所谓，但是一定需要带上 .reg 后缀。</p>
+</li>
+<li><p>查看你自己的电脑的vscode安装目录，最简单的方法就是右键桌面的vscode，查看属性就知道了。以我的安装地址为例：C:\Program Files\Microsoft VS Code\Code.exe ， 单反斜杠最好都换成双反斜杠。</p>
+</li>
+<li><p>复制以下内容到 1.reg 文件中。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/01/04/android%20studio%20%E5%AF%BC%E5%85%A5%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%20-%20fan7983377%20%E7%9A%84%E5%8D%9A%E5%AE%A2%20-%20CSDN%20%E5%8D%9A%E5%AE%A2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hallock">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/" class="post-title-link" itemprop="url">Mysql5.7登录密码错误</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-03T00:00:00+08:00">2020-01-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-05 12:32:43" itemprop="dateModified" datetime="2020-01-05T12:32:43+08:00">2020-01-05</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入</p>
-<ol>
-<li>use mysql;</li>
-<li>update mysql.user  set password=password(‘root’) where user=’root’<ul>
-<li><strong>提示ERROR 1054 (42S22): Unknown column ‘password’ in ‘field list’</strong></li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>原来是mysql数据库下已经没有password这个字段了，password字段改成了authentication_string</p>
-</blockquote>
-<h3 id="使用以下方式即可"><a href="#使用以下方式即可" class="headerlink" title="使用以下方式即可"></a>使用以下方式即可</h3><ol>
-<li>use mysql;</li>
-<li>update mysql.user set authentication_string=password(‘toor’) where user=’root’;</li>
-<li>flush privileges;   刷新权限（必须步骤）</li>
-<li>quit; (退出)</li>
-<li>mysql -u root -p （登录）<blockquote>
-<p>编辑my.ini文件删掉skip-grant-tables 这一行</p>
-</blockquote>
-</li>
-</ol>
-<hr>
-<blockquote>
-<p><strong>MySql5.7</strong> 设置的密码中必须至少包含一个大写字母、一个小写字母、一个特殊符号、一个数字，密码长度至少为8个字符</p>
-</blockquote>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/03/Mysql5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/#more" rel="contents">
+              <a class="btn" href="/2019/09/07/windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -727,7 +545,7 @@ xxx\local.properties
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -749,7 +567,7 @@ xxx\local.properties
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-07-16 14:18:33" itemprop="dateModified" datetime="2019-07-16T14:18:33+08:00">2019-07-16</time>
+                <time title="修改时间：2020-01-05 22:01:55" itemprop="dateModified" datetime="2020-01-05T22:01:55+08:00">2020-01-05</time>
               </span>
 
           <br>
@@ -758,14 +576,14 @@ xxx\local.properties
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>507</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -780,113 +598,9 @@ xxx\local.properties
           <p>Android Studio 添加okhttp</p>
 <p>下载</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation(&quot;com.squareup.okhttp3:okhttp:3.14.2&quot;)</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
-<p>okhttpUtils</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &#39;com.zhy:okhttputils:2.6.2&#39;</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/hongyangAndroid/okhttputils" target="_blank" rel="noopener">https://github.com/hongyangAndroid/okhttputils</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">根据发行说明，OkHttp要求您在构建中启用Java 8，以便从3.13及更高版本开始运行。您可以在https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;write&#x2F;java8-support上了解有关如何启用此功能的更多信息。</span><br><span class="line"></span><br><span class="line">你需要添加类似的东西</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        targetCompatibility &#x3D;  “ 8 ” </span><br><span class="line">        sourceCompatibility &#x3D;  “ 8 ”</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">到您的申请build.gradle</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/15/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hallock">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">Android 启动页黑屏</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-15 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-15T00:00:00+08:00">2019-07-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-07-16 14:20:30" itemprop="dateModified" datetime="2019-07-16T14:20:30+08:00">2019-07-16</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<blockquote>
-<p>本文由 <a href="http://ksria.com/simpread/" target="_blank" rel="noopener">简悦 SimpRead</a> 转码， 原文地址 <a href="https://juejin.im/post/58ad90518ac2472a2ad9b684" target="_blank" rel="noopener">https://juejin.im/post/58ad90518ac2472a2ad9b684</a></p>
-</blockquote>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信做过 Android 的朋友都知道，当一个 APP 启动时，<strong>界面会首先展示一个白屏或者黑屏</strong>，然后再进入欢迎页，稍作停留最后进入 APP 主页。那么这个黑屏或者白屏到底是怎么一回事呢？它的最好的解决方案应该是怎样的呢？今天我们认真的讨论一下这个小问题。</p>
-<p><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fladingwu%2FSplash">点击获取本次项目的 demo</a></p>
-<h2 id="历史原因"><a href="#历史原因" class="headerlink" title="历史原因"></a>历史原因</h2><p>当系统启动一个 APP 时，zygote 进程会首先创建一个新的进程去运行这个 APP，但是进程的创建是需要时间的，在创建完成之前，界面是呈现假死状态的，这就很尴尬了，因为用户会以为没有点到 APP 而再次点击，这极大的降低用户体验，Android 需要及时做出反馈去避免这段迷之尴尬。于是系统根据你的 manifest 文件设置的主题颜色的不同来展示一个白屏或者黑屏。<strong>而这个黑（白）屏正式的称呼应该是 Preview Window, 即预览窗口</strong>。</p>
-<p>好了，现在我们明白了，Preview Window 其实是为了提高用户体验而有意设定的。因此，其实如果不是强迫症，它可能并不是一个问题。</p>
-<p>但是我猜大部分小伙伴应该是和我一样的强迫症患者：这么丑的黑屏怎么能出现在我的 APP 上呢？？？！！！</p>
-<p>所以，下面我们就来聊聊这个问题的解决方案。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/07/15/Android%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%BB%91%E5%B1%8F%E5%8F%8A%E6%9C%80%E4%BC%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -919,7 +633,7 @@ xxx\local.properties
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -941,7 +655,7 @@ xxx\local.properties
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-05 13:15:36" itemprop="dateModified" datetime="2020-01-05T13:15:36+08:00">2020-01-05</time>
+                <time title="修改时间：2020-01-05 22:07:20" itemprop="dateModified" datetime="2020-01-05T22:07:20+08:00">2020-01-05</time>
               </span>
 
           <br>
@@ -950,14 +664,14 @@ xxx\local.properties
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>981</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -971,13 +685,6 @@ xxx\local.properties
       
           <p><strong>1. MySQL-5.7.26 解压版下载地址</strong>：<a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads" target="_blank" rel="noopener">MySql5.7</a></p>
 <p><strong>2. 在解压根目录下添加 data 文件夹、my.ini 文件</strong></p>
-<p><strong>3. 在 my.ini 文件中添加</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">port&#x3D;3306</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line">[mysqld]</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir&#x3D;D:&#x2F;mysql&#x2F;mysql-5.7.26-winx64</span><br><span class="line"># 设置mysql的数据目录</span><br><span class="line">datadir&#x3D;D:&#x2F;mysql&#x2F;mysql-5.7.26-winx64&#x2F;data</span><br><span class="line">character_set_server&#x3D;utf8</span><br><span class="line"># NO_ENGINE_SUBSTITUTION如果需要的存储引擎被禁用或未编译，那么抛出错误。</span><br><span class="line"># NO_AUTO_CREATE_USER防止GRANT自动创建新用户</span><br><span class="line"># STRICT_TRANS_TABLES在该模式下，如果一个值不能插入到一个事务表中，则中断当前的操作，对非事务表不做任何限制</span><br><span class="line">sql_mode&#x3D;NO_ENGINE_SUBSTITUTION,NO_AUTO_CREATE_USER,STRICT_TRANS_TABLES</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine&#x3D;INNODB</span><br><span class="line"># 开启查询缓存</span><br><span class="line">explicit_defaults_for_timestamp&#x3D;true</span><br><span class="line"># 跳过数据库权限验证(登陆后再设置密码，设置密码详见下面步骤)</span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
-
-<p><strong>4、配置环境变量 (在 Path 中添加)</strong></p>
-<p>D:/mysql/mysql-5.7.26-winx64</p>
-<p><strong>5、以管理员身份打开 dos 窗口进入 mysql 的 bin 目录下执行</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 安装</span><br><span class="line">mysqld -install</span><br><span class="line">&#x2F;&#x2F; 初始化</span><br><span class="line">mysqld --initialize-insecure </span><br><span class="line">&#x2F;&#x2F; 启动</span><br><span class="line">net start mysql</span><br><span class="line">&#x2F;&#x2F; 更改密码</span><br><span class="line">set password for root@localhost &#x3D; password(&#39;toor&#39;)</span><br><span class="line">&#x2F;&#x2F; 登陆</span><br><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/15/MySQL-5.7.26%20%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/#more" rel="contents">
@@ -1013,7 +720,7 @@ xxx\local.properties
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -1035,7 +742,7 @@ xxx\local.properties
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-07-16 11:22:35" itemprop="dateModified" datetime="2019-07-16T11:22:35+08:00">2019-07-16</time>
+                <time title="修改时间：2020-01-05 22:08:47" itemprop="dateModified" datetime="2020-01-05T22:08:47+08:00">2020-01-05</time>
               </span>
 
           <br>
@@ -1044,14 +751,14 @@ xxx\local.properties
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>144</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -1064,14 +771,6 @@ xxx\local.properties
 
       
           <h3 id="MySQL8-0-15时区问题"><a href="#MySQL8-0-15时区问题" class="headerlink" title="MySQL8.0.15时区问题"></a>MySQL8.0.15时区问题</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">//localhost:3306/spring</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="后面加上：-serverTimezone-UTC"><a href="#后面加上：-serverTimezone-UTC" class="headerlink" title="后面加上：?serverTimezone=UTC"></a>后面加上：?serverTimezone=UTC</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">//localhost:3306/spring?serverTimezone=UTC</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/15/MySQL8.0.15%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/#more" rel="contents">
@@ -1107,7 +806,7 @@ xxx\local.properties
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hallock">
+      <meta itemprop="name" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -1129,7 +828,7 @@ xxx\local.properties
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-05 14:04:49" itemprop="dateModified" datetime="2020-01-05T14:04:49+08:00">2020-01-05</time>
+                <time title="修改时间：2020-01-05 22:39:28" itemprop="dateModified" datetime="2020-01-05T22:39:28+08:00">2020-01-05</time>
               </span>
 
           <br>
@@ -1138,14 +837,14 @@ xxx\local.properties
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -1157,27 +856,14 @@ xxx\local.properties
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol start="31">
-<li><h4 id="regedit-exe—-注册表"><a href="#regedit-exe—-注册表" class="headerlink" title="regedit.exe—-注册表"></a>regedit.exe—-注册表</h4></li>
-<li><h4 id="msconfig-exe—系统配置实用程序"><a href="#msconfig-exe—系统配置实用程序" class="headerlink" title="msconfig.exe—系统配置实用程序"></a>msconfig.exe—系统配置实用程序</h4></li>
-<li><h4 id="services-msc—本地服务设置"><a href="#services-msc—本地服务设置" class="headerlink" title="services.msc—本地服务设置"></a>services.msc—本地服务设置</h4></li>
-<li><h4 id="regedit-exe—-注册表-1"><a href="#regedit-exe—-注册表-1" class="headerlink" title="regedit.exe—-注册表"></a>regedit.exe—-注册表</h4></li>
-<li><h4 id="osk————打开屏幕键盘"><a href="#osk————打开屏幕键盘" class="headerlink" title="osk————打开屏幕键盘"></a>osk————打开屏幕键盘</h4></li>
-<li><p>gpedit.msc—–组策略  </p>
+          <ol>
+<li><p>regedit.exe—-注册表</p>
 </li>
-<li><p>sndrec32——-录音机 </p>
-</li>
-<li><p>Nslookup——-IP地址侦测器 </p>
-</li>
-<li><p>explorer——-打开资源管理器 </p>
-</li>
-<li><p>logoff———注销命令 </p>
-</li>
-<li><p>tsshutdn——-60秒倒计时关机命令 </p>
-</li>
-<li><p>lusrmgr.msc—-本机用户和组 </p>
+<li><p>msconfig.exe—系统配置实用程序  </p>
 </li>
 <li><p>services.msc—本地服务设置 </p>
+</li>
+<li><p>regedit.exe—-注册表  </p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/15/Window%E6%89%93%E5%BC%80%E6%9C%8D%E5%8A%A1%E7%9A%84DOS%E5%91%BD%E4%BB%A4/#more" rel="contents">
@@ -1200,12 +886,189 @@ xxx\local.properties
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hallock">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/15/aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">aircrack-ng 使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-15 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-15T00:00:00+08:00">2019-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-05 22:43:16" itemprop="dateModified" datetime="2020-01-05T22:43:16+08:00">2020-01-05</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/15/aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hallock">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/" class="post-title-link" itemprop="url">原码反码补码</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-15 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-15T00:00:00+08:00">2019-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-05 22:26:21" itemprop="dateModified" datetime="2020-01-05T22:26:21+08:00">2020-01-05</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>421</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>原码</p>
+<ul>
+<li><p>就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。</p>
+</li>
+<li><p>通过一个字节，也就是8个二进制位表示 +7和 -7</p>
+</li>
+<li><p>0（符号位） 0000111   （+7  正数）</p>
+</li>
+<li><p>1（符号位） 0000111   （-7   负数）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1270,14 +1133,14 @@ xxx\local.properties
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1312,13 +1175,13 @@ xxx\local.properties
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">8k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 
         
