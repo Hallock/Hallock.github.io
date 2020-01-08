@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mysql5.7登录密码错误</title>
+    <title>MySQL5.7登录密码错误</title>
     <url>/2020/01/03/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/</url>
     <content><![CDATA[<p>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入:</p>
 <ol>
@@ -152,8 +152,8 @@
       </tags>
   </entry>
   <entry>
-    <title>aircrack-ng 使用</title>
-    <url>/2019/07/15/Aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
+    <title>Aircrack-ng使用</title>
+    <url>/2019/07/28/Aircrack-ng%20%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p><strong>开始前，先连上无线网卡，因为虚拟机中的 kali 系统不用调用笔记本自带的无线网卡，所以需要一个外接无线网卡，然后接入 kali 系统。</strong></p>
 <a id="more"></a>
 <p><img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_b.jpg" alt="">)<img src="https://pic4.zhimg.com/v2-282f84d3711f5f0f80107357b6ea9e63_r.jpg" alt=""></p>
@@ -203,7 +203,7 @@
   </entry>
   <entry>
     <title>Android Studio 添加 okhttp</title>
-    <url>/2019/07/15/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/</url>
+    <url>/2019/07/20/Android%20Studio%20%E6%B7%BB%E5%8A%A0okhttp/</url>
     <content><![CDATA[<p>Android Studio 添加okhttp</p>
 <p>下载</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">implementation(&quot;com.squareup.okhttp3:okhttp:3.14.2&quot;)</span><br></pre></td></tr></table></figure>
@@ -239,7 +239,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Mysql8.0.15时区问题</title>
+    <title>MySQL8.0.15时区问题</title>
     <url>/2019/07/15/MySQL8.0.15%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h3 id="MySQL8-0-15时区问题"><a href="#MySQL8-0-15时区问题" class="headerlink" title="MySQL8.0.15时区问题"></a>MySQL8.0.15时区问题</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">//localhost:3306/spring</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -511,9 +511,8 @@
   </entry>
   <entry>
     <title>原码反码补码</title>
-    <url>/2019/07/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/</url>
-    <content><![CDATA[<p>原码</p>
-<ul>
+    <url>/2019/06/15/%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E8%A1%A5%E7%A0%81/</url>
+    <content><![CDATA[<h3 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h3><ul>
 <li><p>就是二进制定点表示法，即最高位为符号位，“0”  表示正，“1” 表示负，其余位表示数值的大小。</p>
 </li>
 <li><p>通过一个字节，也就是8个二进制位表示 +7和 -7</p>
@@ -522,14 +521,13 @@
 </li>
 <li><p>1（符号位） 0000111   （-7   负数）</p>
 <a id="more"></a>
-<!-- more -->
-<p>反码</p>
-</li>
-<li><p>正数的反码与其源码相同； 负数的反码是对其源码逐位取反，但符号位除外。</p>
+
 </li>
 </ul>
-<p>补码</p>
-<ul>
+<h3 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h3><ul>
+<li>正数的反码与其源码相同； 负数的反码是对其源码逐位取反，但符号位除外。</li>
+</ul>
+<h3 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h3><ul>
 <li>正数的补码与其原码相同； 负数的补码是在其反码的末位加1</li>
 </ul>
 <table>
@@ -563,7 +561,7 @@
    10 0000000            （1超出八位被砍掉）
 -----------------------
     0 0000000</code></pre><p>1加1得2由于二进制没有2所以保留0向前进1从左到右计算。</p>
-]]></content>
+<!-- more -->]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
