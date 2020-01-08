@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title>MySQL5.7登录密码错误</title>
-    <url>/2020/01/03/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[<p>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入:</p>
+    <url>/2020/01/02/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<p><font size=4>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入:</font></p>
 <ol>
 <li><p>use mysql;</p>
 </li>
@@ -129,13 +129,14 @@
       </tags>
   </entry>
   <entry>
-    <title>windows右键添加VS code</title>
-    <url>/2019/09/07/Windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VS%20code/</url>
-    <content><![CDATA[<h3 id="window-右键菜单添加-vscode"><a href="#window-右键菜单添加-vscode" class="headerlink" title="window 右键菜单添加 vscode"></a>window 右键菜单添加 vscode</h3><h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><ul>
-<li><p>新建一个名为 1.reg 的文件，找一个记事本或者sublime打开，名称无所谓，但是一定需要带上 .reg 后缀。</p>
+    <title>windows右键添加VScode</title>
+    <url>/2019/09/07/Windows%E5%8F%B3%E9%94%AE%E6%B7%BB%E5%8A%A0VScode/</url>
+    <content><![CDATA[<h1 id="Window右键菜单添加VScode"><a href="#Window右键菜单添加VScode" class="headerlink" title="Window右键菜单添加VScode"></a>Window右键菜单添加VScode</h1><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ul>
+<li><p>新建一个名为 1.reg 的文件，找一个记事本或者sublime打开，名称无所谓，但是一定需要带上.reg 后缀。</p>
 </li>
-<li><p>查看你自己的电脑的vscode安装目录，最简单的方法就是右键桌面的vscode，查看属性就知道了。以我的安装地址为例：C:\Program Files\Microsoft VS Code\Code.exe ， 单反斜杠最好都换成双反斜杠。</p>
-</li>
+<li><p>查看你自己的电脑的vscode安装目录，最简单的方法就是右键桌面的vscode，查看属性就知道了。以我的安装地址为例：</p>
+<pre><code>C:\\Program Files\\Microsoft VS Code\\Code.exe 
+单反斜杠最好都换成双反斜杠。</code></pre></li>
 <li><p>复制以下内容到 1.reg 文件中。</p>
 <a id="more"></a>
 
