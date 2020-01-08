@@ -8,7 +8,6 @@
 <li>use mysql;</li>
 <li>update mysql.user  set password=password(‘root’) where user=’root’<ul>
 <li><strong>提示ERROR 1054 (42S22): Unknown column ‘password’ in ‘field list’</strong><a id="more"></a>
-<!-- more -->
 <blockquote>
 <p>原来是mysql数据库下已经没有password这个字段了，password字段改成了authentication_string</p>
 </blockquote>
@@ -30,7 +29,7 @@
 <blockquote>
 <p><strong>MySql5.7</strong> 设置的密码中必须至少包含一个大写字母、一个小写字母、一个特殊符号、一个数字，密码长度至少为8个字符</p>
 </blockquote>
-]]></content>
+<!-- more -->]]></content>
       <tags>
         <tag>MySQL</tag>
       </tags>
