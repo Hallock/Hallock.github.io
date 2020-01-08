@@ -5,22 +5,27 @@
     <url>/2020/01/03/MySQL5.7%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81%E9%94%99%E8%AF%AF/</url>
     <content><![CDATA[<p>安装的解压版<strong>MySQL5.7</strong>，登录时提示密码错误，安装的时候并没有更改密码，后来通过免密码登录的方式更改密码，输入:</p>
 <ol>
-<li>use mysql;</li>
-<li>update mysql.user  set password=password(‘root’) where user=’root’<ul>
+<li><p>use mysql;</p>
+</li>
+<li><p>update mysql.user  set password=password(‘root’) where user=’root’</p>
+<ul>
 <li><strong>提示ERROR 1054 (42S22): Unknown column ‘password’ in ‘field list’</strong><a id="more"></a>
 <blockquote>
 <p>原来是mysql数据库下已经没有password这个字段了，password字段改成了authentication_string</p>
 </blockquote>
-</li>
+<h3 id="命令步骤："><a href="#命令步骤：" class="headerlink" title="命令步骤："></a>命令步骤：</h3></li>
 </ul>
 </li>
-</ol>
-<h3 id="命令步骤："><a href="#命令步骤：" class="headerlink" title="命令步骤："></a>命令步骤：</h3><ol>
-<li>use mysql;</li>
-<li>update mysql.user set authentication_string=password(‘toor’) where user=’root’;</li>
-<li>flush privileges;   刷新权限（必须步骤）</li>
-<li>quit; (退出)</li>
-<li>mysql -u root -p （登录）<blockquote>
+<li><p>use mysql;</p>
+</li>
+<li><p>update mysql.user set authentication_string=password(‘toor’) where user=’root’;</p>
+</li>
+<li><p>flush privileges;   刷新权限（必须步骤）</p>
+</li>
+<li><p>quit; (退出)</p>
+</li>
+<li><p>mysql -u root -p （登录）</p>
+<blockquote>
 <p>编辑my.ini文件删掉skip-grant-tables 这一行</p>
 </blockquote>
 </li>
